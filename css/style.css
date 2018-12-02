@@ -50,3 +50,7 @@ footer > picture > img {
     width: 10%;
     height: auto;
 }
+
+#processingcanvas {
+    margin: 0 calc((100vw - 1000px) / 2);
+}
