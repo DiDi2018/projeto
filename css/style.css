@@ -1,0 +1,52 @@
+.loading {
+    position: absolute;
+    z-index: 5;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+}
+
+.loading > img {
+    margin-left: calc(25% / 2);
+    margin-right: calc(25% / 2);
+    width: 75%;
+    height: auto;
+}
+
+header > a > img {
+    height: 12vh;
+    width: auto;
+}
+
+header {
+    position: relative;
+}
+
+header > nav > ul {
+    padding-left: 0;
+    margin: calc((12vh - 1em)/2) 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60vw;
+}
+
+header > nav > ul > li {
+    display: inline-block;
+    width: calc(59vw / 5);
+    text-align: center;
+    border-right: 1px solid black;
+}
+
+header > nav > ul > li:last-child {
+    border-right: 0;
+}
+
+header > hr {
+    margin-bottom: 0;
+}
+
+footer > picture > img {
+    width: 10%;
+    height: auto;
+}
