@@ -29,7 +29,7 @@ function preload(){
 }
 
 function setup(){
-    let cv = createCanvas(1000,600);
+    let cv = createCanvas(1050,600);
     cv.parent("processingcanvas");
 
     //inicialização letra d
