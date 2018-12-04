@@ -62,31 +62,35 @@ footer > a > picture > img {
 
 .sobre {
     background: #181515;
-    position: relative;
     height: 100vh;
+    position: relative;
 }
 
 .sobre h2 {
     color: white;
     margin: 0;
+    font-family: 'Poppins Medium', sans-serif;
 }
-
-/*.sobre > div {
-    box
-}*/
 
 .sobre > .titulos{
     float: left;
-    padding: 5% 0;
-    width: 25%;
+    width: 21%;
+    padding-left: 9.5%;
+    padding-right: 9.5%;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.sobre > .texto {
+.sobre > p {
     float: left;
-}
-
-.sobre > div > div > p {
+    width: 55%;
+    padding-right: 5%;
     color: white;
-    width: 75%;
-    padding: 2.5% 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40%;
 }
