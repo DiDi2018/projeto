@@ -104,9 +104,13 @@ function draw() {
     c++;
     if (c===10*j){
         j++;
-        for(let i=0; i<t.length; i++){
+        for(let i=0; i<d.length; i++){
             d[i].clicar();
+        }
+        for(let i=0; i<a.length; i++){
             a[i].clicar();
+        }
+        for(let i=0; i<t.length; i++){
             t[i].clicar();
         }
     }
@@ -151,15 +155,7 @@ class Peca {
     }
 
     clicar() {
-        if (this.n === 1) {
-            if (mouseX >= this.x-20 && mouseX <= this.x + 50+20 && mouseY >= this.y-20 && mouseY <= this.y + 50+20) {
-                this.n++;
-                if (this.n > 3) {
-                    this.n = 1;
-                }
-            }
-        }
-        else if (this.n === 2) {
+        if (this.n === 2) {
             if (this.f === 1) {
                 if (dist(this.x, this.y, mouseX, mouseY) <= 50+20 && mouseX >= this.x-20 && mouseX <= this.x + 50+20 && mouseY >= this.y-20 && mouseY <= this.y + 50+20) {
                     this.n++;
@@ -193,7 +189,7 @@ class Peca {
                 }
             }
         }
-        else if (this.n === 3) {
+        else if (this.n === 3 || this.n === 1) {
             if (mouseX >= this.x-20 && mouseX <= this.x + 50+20 && mouseY >= this.y-20 && mouseY <= this.y + 50+20) {
                 this.n++;
                 if (this.n > 3) {
