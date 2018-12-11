@@ -1,3 +1,6 @@
+let altura;
+let largura;
+
 let d = [];
 let a = [];
 let t = [];
@@ -31,66 +34,68 @@ function preload() {
 }
 
 function setup() {
-    let cv = createCanvas(1050, 600);
+    altura = windowHeight - windowHeight*12/100;
+    largura = altura*1.75;
+    let cv = createCanvas(largura, altura);
     cv.parent("processingcanvas");
 
     //inicialização letra d
-    d[0] = new Peca(4, 50, 350, 1);
-    d[1] = new Peca(2, 50, 400, 1);
-    d[2] = new Peca(4, 100, 300, 1);
-    d[3] = new Peca(2, 100, 450, 1);
-    d[4] = new Peca(4, 150, 250, 1);
-    d[5] = new Peca(2, 150, 500, 1);
-    d[6] = new Peca(3, 200, 250, 1);
-    d[7] = new Peca(1, 200, 500, 1);
-    d[8] = new Peca(3, 250, 300, 1);
-    d[9] = new Peca(1, 250, 450, 1);
-    d[10] = new Peca(3, 300, 50, 1);
-    d[11] = new Peca(1, 300, 100, 1);
-    d[12] = new Peca(4, 250, 150, 1);
-    d[13] = new Peca(2, 250, 200, 1);
-    d[14] = new Peca(3, 300, 250, 1);
-    d[15] = new Peca(1, 300, 300, 1);
-    d[16] = new Peca(3, 300, 350, 1);
-    d[17] = new Peca(1, 300, 400, 1);
-    d[18] = new Peca(3, 300, 450, 1);
-    d[19] = new Peca(2, 300, 500, 1);
+    d[0] = new Peca(4, largura/21, altura/12*7, 1);
+    d[1] = new Peca(2, largura/21, altura/12*8, 1);
+    d[2] = new Peca(4, largura/21*2, altura/12*6, 1);
+    d[3] = new Peca(2, largura/21*2, altura/12*9, 1);
+    d[4] = new Peca(4, largura/21*3, altura/12*5, 1);
+    d[5] = new Peca(2, largura/21*3, altura/12*10, 1);
+    d[6] = new Peca(3, largura/21*4, altura/12*5, 1);
+    d[7] = new Peca(1, largura/21*4, altura/12*10, 1);
+    d[8] = new Peca(3, largura/21*5, altura/12*6, 1);
+    d[9] = new Peca(1, largura/21*5, altura/12*9, 1);
+    d[10] = new Peca(3, largura/21*6, altura/12, 1);
+    d[11] = new Peca(1, largura/21*6, altura/12*2, 1);
+    d[12] = new Peca(4, largura/21*5, altura/12*3, 1);
+    d[13] = new Peca(2, largura/21*5, altura/12*4, 1);
+    d[14] = new Peca(3, largura/21*6, altura/12*5, 1);
+    d[15] = new Peca(1, largura/21*6, altura/12*6, 1);
+    d[16] = new Peca(3, largura/21*6, altura/12*7, 1);
+    d[17] = new Peca(1, largura/21*6, altura/12*8, 1);
+    d[18] = new Peca(3, largura/21*6, altura/12*9, 1);
+    d[19] = new Peca(2, largura/21*6, altura/12*10, 1);
 
     //inicialização letra a
-    a[0] = new Peca(4, 400, 350, 2);
-    a[1] = new Peca(2, 400, 400, 2);
-    a[2] = new Peca(4, 450, 300, 2);
-    a[3] = new Peca(2, 450, 450, 2);
-    a[4] = new Peca(4, 500, 250, 2);
-    a[5] = new Peca(2, 500, 500, 2);
-    a[6] = new Peca(3, 550, 250, 2);
-    a[7] = new Peca(1, 550, 500, 2);
-    a[8] = new Peca(3, 600, 300, 2);
-    a[9] = new Peca(1, 600, 450, 2);
-    a[10] = new Peca(1, 650, 300, 2);
-    a[11] = new Peca(3, 650, 350, 2);
-    a[12] = new Peca(1, 650, 400, 2);
-    a[13] = new Peca(3, 650, 450, 2);
-    a[14] = new Peca(2, 650, 500, 2);
-    a[15] = new Peca(1, 700, 500, 2);
+    a[0] = new Peca(4, largura/21*8, altura/12*7, 2);
+    a[1] = new Peca(2, largura/21*8, altura/12*8, 2);
+    a[2] = new Peca(4, largura/21*9, altura/12*6, 2);
+    a[3] = new Peca(2, largura/21*9, altura/12*9, 2);
+    a[4] = new Peca(4, largura/21*10, altura/12*5, 2);
+    a[5] = new Peca(2, largura/21*10, altura/12*10, 2);
+    a[6] = new Peca(3, largura/21*11, altura/12*5, 2);
+    a[7] = new Peca(1, largura/21*11, altura/12*10, 2);
+    a[8] = new Peca(3, largura/21*12, altura/12*6, 2);
+    a[9] = new Peca(1, largura/21*12, altura/12*9, 2);
+    a[10] = new Peca(1, largura/21*13, altura/12*6, 2);
+    a[11] = new Peca(3, largura/21*13, altura/12*7, 2);
+    a[12] = new Peca(1, largura/21*13, altura/12*8, 2);
+    a[13] = new Peca(3, largura/21*13, altura/12*9, 2);
+    a[14] = new Peca(2, largura/21*13, altura/12*10, 2);
+    a[15] = new Peca(1, largura/21*14, altura/12*10, 2);
 
     //inicialização letra t
-    t[0] = new Peca(2, 750, 250, 3);
-    t[1] = new Peca(4, 800, 200, 3);
-    t[2] = new Peca(1, 800, 250, 3);
-    t[3] = new Peca(4, 800, 350, 3);
-    t[4] = new Peca(2, 800, 400, 3);
-    t[5] = new Peca(3, 850, 100, 3);
-    t[6] = new Peca(1, 850, 150, 3);
-    t[7] = new Peca(4, 850, 250, 3);
-    t[8] = new Peca(1, 850, 300, 3);
-    t[9] = new Peca(3, 850, 450, 3);
-    t[10] = new Peca(2, 850, 500, 3);
-    t[11] = new Peca(3, 900, 250, 3);
+    t[0] = new Peca(2, largura/21*15, altura/12*5, 3);
+    t[1] = new Peca(4, largura/21*16, altura/12*4, 3);
+    t[2] = new Peca(1, largura/21*16, altura/12*5, 3);
+    t[3] = new Peca(4, largura/21*16, altura/12*7, 3);
+    t[4] = new Peca(2, largura/21*16, altura/12*8, 3);
+    t[5] = new Peca(3, largura/21*17, altura/12*2, 3);
+    t[6] = new Peca(1, largura/21*17, altura/12*3, 3);
+    t[7] = new Peca(4, largura/21*17, altura/12*5, 3);
+    t[8] = new Peca(1, largura/21*17, altura/12*6, 3);
+    t[9] = new Peca(3, largura/21*17, altura/12*9, 3);
+    t[10] = new Peca(2, largura/21*17, altura/12*10, 3);
+    t[11] = new Peca(3, largura/21*18, altura/12*5, 3);
 }
 
 function draw() {
-    background(255);
+    background(color(250,250,250));
     for (let i = 0; i < d.length; i++) {
         d[i].desenhar();
     }
@@ -102,7 +107,7 @@ function draw() {
     }
 
     c++;
-    if (c===10*j){
+    if (c===15*j){
         j++;
         for(let i=0; i<d.length; i++){
             d[i].clicar();
@@ -114,6 +119,62 @@ function draw() {
             t[i].clicar();
         }
     }
+}
+
+function windowResized() {
+    altura = windowHeight - windowHeight*12/100;
+    largura = altura*1.75;
+    resizeCanvas(largura, altura);
+    d[0].mudarCoord(largura/21, altura/12*7);
+    d[1].mudarCoord(largura/21, altura/12*8);
+    d[2].mudarCoord(largura/21*2, altura/12*6);
+    d[3].mudarCoord(largura/21*2, altura/12*9);
+    d[4].mudarCoord(largura/21*3, altura/12*5);
+    d[5].mudarCoord(largura/21*3, altura/12*10);
+    d[6].mudarCoord(largura/21*4, altura/12*5);
+    d[7].mudarCoord(largura/21*4, altura/12*10);
+    d[8].mudarCoord(largura/21*5, altura/12*6);
+    d[9].mudarCoord(largura/21*5, altura/12*9);
+    d[10].mudarCoord(largura/21*6, altura/12);
+    d[11].mudarCoord(largura/21*6, altura/12*2);
+    d[12].mudarCoord(largura/21*5, altura/12*3);
+    d[13].mudarCoord(largura/21*5, altura/12*4);
+    d[14].mudarCoord(largura/21*6, altura/12*5);
+    d[15].mudarCoord(largura/21*6, altura/12*6);
+    d[16].mudarCoord(largura/21*6, altura/12*7);
+    d[17].mudarCoord(largura/21*6, altura/12*8);
+    d[18].mudarCoord(largura/21*6, altura/12*9);
+    d[19].mudarCoord(largura/21*6, altura/12*10);
+
+    a[0].mudarCoord(largura/21*8, altura/12*7);
+    a[1].mudarCoord(largura/21*8, altura/12*8);
+    a[2].mudarCoord(largura/21*9, altura/12*6);
+    a[3].mudarCoord(largura/21*9, altura/12*9);
+    a[4].mudarCoord(largura/21*10, altura/12*5);
+    a[5].mudarCoord(largura/21*10, altura/12*10);
+    a[6].mudarCoord(largura/21*11, altura/12*5);
+    a[7].mudarCoord(largura/21*11, altura/12*10);
+    a[8].mudarCoord(largura/21*12, altura/12*6);
+    a[9].mudarCoord(largura/21*12, altura/12*9);
+    a[10].mudarCoord(largura/21*13, altura/12*6);
+    a[11].mudarCoord(largura/21*13, altura/12*7);
+    a[12].mudarCoord(largura/21*13, altura/12*8);
+    a[13].mudarCoord(largura/21*13, altura/12*9);
+    a[14].mudarCoord(largura/21*13, altura/12*10);
+    a[15].mudarCoord(largura/21*14, altura/12*10);
+
+    t[0].mudarCoord(largura/21*15, altura/12*5);
+    t[1].mudarCoord(largura/21*16, altura/12*4);
+    t[2].mudarCoord(largura/21*16, altura/12*5);
+    t[3].mudarCoord(largura/21*16, altura/12*7);
+    t[4].mudarCoord(largura/21*16, altura/12*8);
+    t[5].mudarCoord(largura/21*17, altura/12*2);
+    t[6].mudarCoord(largura/21*17, altura/12*3);
+    t[7].mudarCoord(largura/21*17, altura/12*5);
+    t[8].mudarCoord(largura/21*17, altura/12*6);
+    t[9].mudarCoord(largura/21*17, altura/12*9);
+    t[10].mudarCoord(largura/21*17, altura/12*10);
+    t[11].mudarCoord(largura/21*18, altura/12*5);
 }
 
 
@@ -146,18 +207,25 @@ class Peca {
 
     desenhar() {
         if (this.n === 1) {
-            image(this.triangulo, this.x, this.y);
-        } else if (this.n === 2) {
-            image(this.circulo, this.x, this.y);
-        } else if (this.n === 3) {
-            image(this.quadrado, this.x, this.y);
+            image(this.triangulo, this.x, this.y, largura/21, altura/12);
         }
+        else if (this.n === 2) {
+            image(this.circulo, this.x, this.y, largura/21, altura/12);
+        }
+        else if (this.n === 3) {
+            image(this.quadrado, this.x, this.y, largura/21, altura/12);
+        }
+    }
+
+    mudarCoord(x,y){
+        this.x=x;
+        this.y=y;
     }
 
     clicar() {
         if (this.n === 2) {
             if (this.f === 1) {
-                if (dist(this.x, this.y, mouseX, mouseY) <= 50+20 && mouseX >= this.x-20 && mouseX <= this.x + 50+20 && mouseY >= this.y-20 && mouseY <= this.y + 50+20) {
+                if (dist(this.x, this.y, mouseX, mouseY) <= largura/21+20 && mouseX >= this.x-20 && mouseX <= this.x + largura/21+20 && mouseY >= this.y-20 && mouseY <= this.y + largura/21+20) {
                     this.n++;
                     if (this.n > 3) {
                         this.n = 1;
@@ -165,7 +233,7 @@ class Peca {
                 }
             }
             else if (this.f === 2) {
-                if (dist(this.x + 50, this.y, mouseX, mouseY) <= 50+20 && mouseX >= this.x-20 && mouseX <= this.x + 50+20 && mouseY >= this.y-20 && mouseY <= this.y + 50+20) {
+                if (dist(this.x + 50, this.y, mouseX, mouseY) <= largura/21+20 && mouseX >= this.x-20 && mouseX <= this.x + largura/21+20 && mouseY >= this.y-20 && mouseY <= this.y + largura/21+20) {
                     this.n++;
                     if (this.n > 3) {
                         this.n = 1;
@@ -173,7 +241,7 @@ class Peca {
                 }
             }
             else if (this.f === 3) {
-                if (dist(this.x, this.y + 50, mouseX, mouseY) <= 50+20 && mouseX >= this.x-20 && mouseX <= this.x + 50+20 && mouseY >= this.y-20 && mouseY <= this.y + 50+20) {
+                if (dist(this.x, this.y + 50, mouseX, mouseY) <= largura/21+20 && mouseX >= this.x-20 && mouseX <= this.x + largura/21+20 && mouseY >= this.y-20 && mouseY <= this.y + largura/21+20) {
                     this.n++;
                     if (this.n > 3) {
                         this.n = 1;
@@ -181,7 +249,7 @@ class Peca {
                 }
             }
             else if (this.f === 4) {
-                if (dist(this.x + 50, this.y + 50, mouseX, mouseY) <= 50+20 && mouseX >= this.x-20 && mouseX <= this.x + 50+20 && mouseY >= this.y-20 && mouseY <= this.y + 50+20) {
+                if (dist(this.x + 50, this.y + 50, mouseX, mouseY) <= largura/21+20 && mouseX >= this.x-20 && mouseX <= this.x + largura/21+20 && mouseY >= this.y-20 && mouseY <= this.y + largura/21+20) {
                     this.n++;
                     if (this.n > 3) {
                         this.n = 1;
@@ -190,7 +258,7 @@ class Peca {
             }
         }
         else if (this.n === 3 || this.n === 1) {
-            if (mouseX >= this.x-20 && mouseX <= this.x + 50+20 && mouseY >= this.y-20 && mouseY <= this.y + 50+20) {
+            if (mouseX >= this.x-20 && mouseX <= this.x + largura/21+20 && mouseY >= this.y-20 && mouseY <= this.y + largura/21+20) {
                 this.n++;
                 if (this.n > 3) {
                     this.n = 1;
