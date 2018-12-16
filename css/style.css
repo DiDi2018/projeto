@@ -3,6 +3,21 @@ hr {
     margin: 0;
 }
 
+@font-face {
+    font-family: "Triângulos_Design";
+    src: url("/projeto/css/fonts/triangulos-design.ttf");
+}
+
+@font-face {
+    font-family: "Círculos_Arte";
+    src: url("/projeto/css/fonts/circulos-arte.ttf");
+}
+
+@font-face {
+    font-family: "Quadrados_Tecnologia";
+    src: url("/projeto/css/fonts/quadrados-tecnologia.ttf");
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: rgb(250,250,250);
@@ -70,6 +85,11 @@ header > hr {
     margin-bottom: 0;
 }
 
+footer > a > picture {
+    position: relative;
+    margin-left: auto;
+}
+
 footer > a > picture > img {
     width: 10%;
     height: auto;
@@ -77,7 +97,7 @@ footer > a > picture > img {
 
 #processingcanvas {
     margin: 0 calc((100vw - ((100vh - 12vh)*1.75))/2);
-    height: 98vh;
+    height: 88vh;
 }
 
 .sobre {
@@ -117,7 +137,7 @@ footer > a > picture > img {
 }
 
 .intervenientes {
-    height: calc(100vh - 12vh);
+    /*height: calc(100vh - 12vh);*/
 }
 
 .locais {
