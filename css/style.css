@@ -5,17 +5,17 @@ hr {
 
 @font-face {
     font-family: "Triângulos_Design";
-    src: url("/projeto/css/fonts/triangulos-design.ttf");
+    src: url("fonts/triangulos-design.ttf");
 }
 
 @font-face {
     font-family: "Círculos_Arte";
-    src: url("/projeto/css/fonts/circulos-arte.ttf");
+    src: url("fonts/circulos-arte.ttf");
 }
 
 @font-face {
     font-family: "Quadrados_Tecnologia";
-    src: url("/projeto/css/fonts/quadrados-tecnologia.ttf");
+    src: url("fonts/quadrados-tecnologia.ttf");
 }
 
 body {
@@ -77,6 +77,10 @@ header > nav > ul > li {
     line-height: 1em;
 }
 
+header > nav > ul > li > a {
+    text-decoration: none;
+}
+
 header > nav > ul > li:last-child {
     border-right: 0;
 }
@@ -103,11 +107,22 @@ footer > a > picture > img {
 .sobre {
     height: calc(100vh - 12vh);
     position: relative;
+    display: flex;
 }
 
-.sobre h2 {
+.sobre h2:first-child {
     margin: 0;
-    font-family: 'Poppins Medium', sans-serif;
+    font-family: 'Triângulos_Design', sans-serif;
+}
+
+.sobre h2:nth-child(2) {
+    margin: 0;
+    font-family: 'Círculos_Arte', sans-serif;
+}
+
+.sobre h2:last-child {
+    margin: 0;
+    font-family: 'Quadrados_Tecnologia', sans-serif;
 }
 
 .sobre > .titulos{
@@ -115,13 +130,11 @@ footer > a > picture > img {
     width: 21%;
     padding-left: 9.5%;
     padding-right: 9.5%;
-    font-size: 2em;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    font-size: 2.3em;
+    transform: translateY(50%);
 }
 
-.sobre > p {
+.sobre > div > p {
     float: left;
     width: 55%;
     padding-right: 5%;
