@@ -135,7 +135,7 @@ footer > a > picture > img {
 }
 
 .sobre > .texto {
-    width: calc((100vw / 6) * 3);
+    width: 50vw;
 }
 
 /*edição 2018*/
