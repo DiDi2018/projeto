@@ -144,9 +144,18 @@ footer > a > picture > img {
     min-height: calc(100vh - 7vw);
 }
 
+.edicao2018 > svg {
+    width: calc(100vw / 3 / 3 / 2);
+    height: auto;
+}
+
+/*intervinientes*/
+
 .intervenientes {
     min-height: calc(100vh - 7vw);
 }
+
+/*locais*/
 
 .locais {
     min-height: calc(100vh - 7vw);
