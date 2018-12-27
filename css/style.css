@@ -144,7 +144,7 @@ footer > a > picture > img {
     min-height: calc(100vh - 7vw);
 }
 
-.edicao2018 > svg {
+.edicao2018 > span > svg {
     width: calc(100vw / 3 / 3 / 2);
     height: auto;
 }
