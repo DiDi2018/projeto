@@ -22,6 +22,8 @@ body {
     font-family: 'Poppins', sans-serif;
     background: rgb(250,250,250);
     margin: 0;
+    /*scroll-snap-type: y mandatory;
+    scroll-padding-top: 7vw;*/
 }
 
 .loading {
@@ -42,7 +44,7 @@ body {
 header {
     position: sticky;
     height: 7vw;
-    background: rgb(250,250,250);;
+    background: rgb(250,250,250);
     z-index: 3;
     top: 0;
 }
@@ -88,6 +90,7 @@ header > nav > ul > li:nth-child(3) {
 header > nav > ul > li > a {
     text-decoration: none;
     font-weight: lighter;
+    color: black;
 }
 
 header > nav > ul > li:last-child {
@@ -102,74 +105,130 @@ header > hr {
     margin-bottom: 0;
 }
 
-footer > a > picture {
+main {
     position: relative;
-    margin-left: auto;
 }
 
-footer > a > picture > img {
-    width: 10%;
-    height: auto;
+.active {
+    font-weight: bold;
 }
 
 #processingcanvas {
     height: calc(100vh - 7vw);
+    scroll-snap-align: start;
 }
 
 /*sobre*/
 
-.sobre {
+#sobre {
     min-height: calc(100vh - 7vw);
     position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    /*scroll-snap-align: start;*/
 }
 
-.sobre > .titulos{
+#sobre > .titulos{
     font-size: 3em;
 }
 
-.sobre > .titulos > p:first-child {
+#sobre > .titulos > p:first-child {
     margin: 0;
     font-family: 'Triângulos_Design', sans-serif;
     /*padding-top: calc((100vh - 7vw - 3 * 1em) / 2);*/
 }
 
-.sobre > .titulos > p:nth-child(2) {
+#sobre > .titulos > p:nth-child(2) {
     margin: 0;
     font-family: 'Círculos_Arte', sans-serif;
 }
 
-.sobre > .titulos > p:last-child {
+#sobre > .titulos > p:last-child {
     margin: 0;
     font-family: 'Quadrados_Tecnologia', sans-serif;
 }
 
-.sobre > .texto {
+#sobre > .texto {
     width: 50vw;
 }
 
 /*edição 2018*/
 
-.edicao2018 {
+#edicao2018 {
     min-height: calc(100vh - 7vw);
+    /*scroll-snap-align: start;*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.edicao2018 > span > svg {
-    width: calc(100vw / 3 / 3 / 2);
+#edicao2018 > div {
+    flex: 1;
+    text-align: center;
+    display: inline-block;
+}
+
+#edicao2018 > div > div {
+    width: calc(100vw / 18 * 2);
+    height: calc(100vw / 18 * 125 / 250 * 2);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#edicao2018 > div > div > svg {
+    width: calc(100vw / 18);
     height: auto;
+}
+
+#edicao2018 > div > div > svg:last-child {
+    position: relative;
+    top: calc(100vw / 18 * 125 / 250);
+}
+
+#edicao2018 > div > div:hover {
+    width: calc(100vw / 16 * 2);
+    height: calc(100vw / 16 * 125 / 250 * 2);
+}
+
+#edicao2018 > div > div:hover > svg {
+    width: calc(100vw / 16);
+    top: calc(-(100vw / 16) - (100vw / 18));
+}
+
+#edicao2018 > div > div:hover > svg:last-child {
+    top: calc(100vw / 16 * 125 / 250);
 }
 
 /*intervinientes*/
 
-.intervenientes {
+#intervenientes {
     min-height: calc(100vh - 7vw);
+    /*scroll-snap-align: start;*/
 }
 
 /*locais*/
 
-.locais {
+#locais {
     min-height: calc(100vh - 7vw);
+    /*scroll-snap-align: start;*/
+}
+
+/*contactos*/
+
+#contactos {
+    height: calc(100vh - 7vw);
+    /*scroll-snap-align: start;*/
+}
+
+#contactos > a > picture {
+    position: relative;
+    margin-left: auto;
+    display: block;
+}
+
+#contactos > a > picture > img {
+    width: 10%;
+    height: auto;
 }

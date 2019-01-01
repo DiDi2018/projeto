@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DAT - Design, Arte e Tecnologia</title>
+
     <link rel="stylesheet" href="css/style.css">
     <script src="JavaScript/p5.js"></script>
     <script src="JavaScript/sketch.js"></script>
@@ -19,11 +20,11 @@
         <a href="index.html"> <img src="images/logoSite.png" height="283" width="595" alt="DAT"> </a>
         <nav>
             <ul>
-                <li><a class="nav">Sobre</a></li><li>
-                <a class="nav">Edição 2018</a></li><li>
-                <a class="nav">Intervenientes</a></li><li>
-                <a class="nav">Locais</a></li><li>
-                <a class="nav">Contactos</a></li>
+                <li><a id="sobreID">Sobre</a></li><li>
+                <a id="edicao2018ID">Edição 2018</a></li><li>
+                <a id="intervenientesID">Intervenientes</a></li><li>
+                <a id="locaisID">Locais</a></li><li>
+                <a id="contactosID">Contactos</a></li>
             </ul>
         </nav>
     </header>
@@ -32,7 +33,7 @@
 
         <div id="processingcanvas"></div>
         <hr>
-        <div class="sobre">
+        <div id="sobre">
             <div class="titulos">
                 <p>design,</p>
                 <p>arte e</p>
@@ -52,41 +53,43 @@
             </p>
         </div>
         <hr>
-        <div class="edicao2018">
-            <h2>Edição 2018</h2>
+        <div id="edicao2018">
             <!-- primeiro til-->
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
-                    <path d="M250 125H0C0 56 56 0 125 0s125 56 125 125z" stroke="#000" stroke-miterlimit="10"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
-                    <path d="M250 0c0 69-56 125-125 125S0 69 0 0h250z" stroke="#000" stroke-miterlimit="10"/>
-                </svg>
-            </span>
+            <div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
+                        <path d="M0 125L125 0l125 125z"/>
+                    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
+                        <path d="M0 0h250L125 125z"/>
+                    </svg>
+                </div>
+            </div>
 
             <!-- segundo til -->
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
-                    <path d="M250 125H0C0 56 56 0 125 0s125 56 125 125z" stroke="#000" stroke-miterlimit="10"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
-                    <path d="M250 0c0 69-56 125-125 125S0 69 0 0h250z" stroke="#000" stroke-miterlimit="10"/>
-                </svg>
-            </span>
+            <div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
+                        <path d="M250 125H0C0 56 56 0 125 0s125 56 125 125z" stroke-miterlimit="10"/>
+                    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
+                        <path d="M250 0c0 69-56 125-125 125S0 69 0 0h250z" stroke-miterlimit="10"/>
+                    </svg>
+                </div>
+            </div>
 
             <!-- terceiro til-->
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
-                    <path d="M250 125H0C0 56 56 0 125 0s125 56 125 125z" stroke="#000" stroke-miterlimit="10"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
-                    <path d="M250 0c0 69-56 125-125 125S0 69 0 0h250z" stroke="#000" stroke-miterlimit="10"/>
-                </svg>
-            </span>
+            <div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
+                        <path d="M0 0h250v125H0z"/>
+                    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 125">
+                        <path d="M0 0h250v125H0z"/>
+                    </svg>
+                </div>
+            </div>
 
         </div>
         <hr>
-        <div class="intervenientes">
+        <div id="intervenientes">
             <h2>Intervenientes</h2>
 
             <h3>Mário Feliciano</h3>
@@ -134,7 +137,7 @@
             </p>
         </div>
         <hr>
-        <div class="locais">
+        <div id="locais">
             <h2>Locais</h2>
 
             <h3>DARQ</h3>
@@ -156,22 +159,22 @@
             </p>
         </div>
         <hr>
-        <div class="contactos">
+        <div id="contactos">
             <h2>Contactos</h2>
             <a href="https://apps.uc.pt/mypage/faculty/uc26736/pt">Nuno Coelho</a>
             <a href="https://www.cisuc.uc.pt/people/show/2033">Tiago Martins</a>
+            <a href="https://www.uc.pt/">
+                <picture>
+                    <img src="images/logoUC.png" width="2240" height="1800" alt="Universidade de Coimbra">
+                </picture>
+            </a>
         </div>
     </main>
 
     <footer>
-        <a href="https://www.uc.pt/">
-            <picture>
-                <img src="images/logoUC.png" width="2240" height="1800" alt="Universidade de Coimbra">
-            </picture>
-        </a>
+
 
     </footer>
-
 
     <script src="JavaScript/main.js"></script>
 </body>
