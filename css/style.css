@@ -109,7 +109,7 @@ main {
     position: relative;
 }
 
-.active {
+.bold {
     font-weight: bold;
 }
 
@@ -164,41 +164,46 @@ main {
     align-items: center;
 }
 
+.divAltura {
+    height: calc(30vw + (100vw / 14 * 125 / 250)) !important;
+}
+
+.divTransition {
+    transition-duration: 1s;
+    transition-property: height;
+}
+
 #edicao2018 > div {
     flex: 1;
-    text-align: center;
     display: inline-block;
 }
 
 #edicao2018 > div > div {
-    width: calc(100vw / 18 * 2);
-    height: calc(100vw / 18 * 125 / 250 * 2);
+    width: calc(100vw / 14 * 2);
+    height: calc(100vw / 14 * 125 / 250 * 2);
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 #edicao2018 > div > div > svg {
-    width: calc(100vw / 18);
+    width: calc(100vw / 14);
     height: auto;
+    position: relative;
 }
 
 #edicao2018 > div > div > svg:last-child {
-    position: relative;
-    top: calc(100vw / 18 * 125 / 250);
+    position: absolute;
+    bottom: 0;
 }
 
 #edicao2018 > div > div:hover {
-    width: calc(100vw / 16 * 2);
-    height: calc(100vw / 16 * 125 / 250 * 2);
+    width: calc(100vw / 12 * 2);
+    height: calc(100vw / 12 * 125 / 250 * 2);
 }
 
 #edicao2018 > div > div:hover > svg {
-    width: calc(100vw / 16);
-    top: calc(-(100vw / 16) - (100vw / 18));
-}
-
-#edicao2018 > div > div:hover > svg:last-child {
-    top: calc(100vw / 16 * 125 / 250);
+    width: calc(100vw / 12);
 }
 
 /*intervinientes*/
