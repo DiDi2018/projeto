@@ -125,3 +125,50 @@ function abrirTils(x){
         arrayDeDivTils[x].classList.toggle("divTransition");
     }
 }
+
+
+
+
+//LOCAIS
+
+let fundo= document.querySelector(".fundo2");
+let museu=document.querySelector(".museu");
+
+museu.addEventListener("click", aparecer);
+function aparecer(){
+    fundo.style.visibility = "visible";
+}
+
+let cruz=document.querySelector(".cruz");
+cruz.addEventListener("click",sair);
+
+function sair(){
+    fundo.style.visibility ="hidden";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
