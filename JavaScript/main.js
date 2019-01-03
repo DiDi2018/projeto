@@ -133,17 +133,51 @@ function abrirTils(x){
 
 let fundo= document.querySelector(".fundo2");
 let museu=document.querySelector(".museu");
+let museuinfo= document.querySelector(".museuInfo");
 
-museu.addEventListener("click", aparecer);
-function aparecer(){
-    fundo.style.visibility = "visible";
+museu.addEventListener("click", aparecermuseu);
+function aparecermuseu(){
+    fundo.style.display = "block";
+    museuinfo.style.display = "block";
+    darqinfo.style.display = "none";
+    deiinfo.style.display = "none";
 }
 
-let cruz=document.querySelector(".cruz");
-cruz.addEventListener("click",sair);
 
+let dei = document.querySelector(".dei");
+let deiinfo=document.querySelector(".deiInfo");
+
+dei.addEventListener("click", aparecerdei);
+function aparecerdei(){
+    fundo.style.display = "block";
+    deiinfo.style.display = "block";
+    museuinfo.style.display = "none";
+    darqinfo.style.display = "none";
+}
+
+
+let darq = document.querySelector(".darq");
+let darqinfo=document.querySelector(".darqInfo");
+
+darq.addEventListener("click", aparecerdarq);
+function aparecerdarq(){
+    fundo.style.display = "block";
+    darqinfo.style.display = "block";
+    deiinfo.style.display = "none";
+    museuinfo.style.display = "none";
+
+}
+
+
+let cruz=document.querySelector(".cruz");
+
+cruz.addEventListener("click",sair);
 function sair(){
-    fundo.style.visibility ="hidden";
+    fundo.style.display ="none";
+    darqinfo.style.display = "none";
+    deiinfo.style.display = "none";
+    museuinfo.style.display = "none";
+
 }
 
 

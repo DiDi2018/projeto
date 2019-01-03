@@ -264,7 +264,7 @@ main {
     left: 10%;
     margin: auto;
     background: black;
-    visibility: hidden;
+    display: none;
 }
 
 .cruz {
@@ -277,17 +277,18 @@ main {
 
 .imagemlocal {
     height: 27vw;
-    margin: 3vw;
     width: auto;
+    margin: 3vw;
 }
 
-.fundo2 > p {
+.fundo2  p {
     display: inline-block;
     color: white;
+    width: 40%;
     position: absolute;
     top: 50%;
     transform:translateY(-50%);
-    margin-left: 7vw;
+    margin-left: 4vw;
 }
 
 /*contactos*/
