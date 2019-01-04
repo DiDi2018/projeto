@@ -102,30 +102,122 @@ contactos.addEventListener('click',function(){
 
 /*clicar nos tils da secção edição 2018*/
 
-let arrayDeDivTils = document.querySelectorAll("#edicao2018 > div > div");
+let arrayDeDivTils = document.querySelectorAll("#edicao2018 > div > div:nth-child(4)");
+let divsAgenda = document.querySelectorAll(".agenda");
+let textoData = document.querySelectorAll("#edicao2018 > div > p");
 
 arrayDeDivTils[0].addEventListener("click",function(){
-    abrirTils(0);
+    abrirTils(0,0,1);
 });
 arrayDeDivTils[1].addEventListener("click",function(){
-    abrirTils(1);
+    abrirTils(1,2,3);
 });
 arrayDeDivTils[2].addEventListener("click",function(){
-    abrirTils(2);
+    abrirTils(2,4,5);
 });
 
-function abrirTils(x){
-    arrayDeDivTils[x].classList.toggle("divAltura");
+function abrirTils(x,y,z){
     if(arrayDeDivTils[x].classList.contains("divTransition")){
+        divsAgenda[x].style.opacity = 0;
         window.setTimeout(function(){
             arrayDeDivTils[x].classList.toggle("divTransition");
-        },1000);
+            arrayDeDivTils[x].classList.toggle("divHover");
+        },1250);
+        window.setTimeout(function(){
+            textoData[y].style.bottom = "0";
+            textoData[z].style.top = "0";
+            arrayDeDivTils[x].classList.toggle("divAltura");
+        },250);
     }
     else {
+        textoData[y].style.bottom = "calc(30vw + (100vw / 8 * 125 / 250) - (100vw / 10 * 125 / 250 + 2.5vw) - 4vw)";
+        textoData[z].style.top = "calc(100vw / 10 * 125 / 250 + 2.5vw)";
+        arrayDeDivTils[x].classList.toggle("divAltura");
         arrayDeDivTils[x].classList.toggle("divTransition");
+        arrayDeDivTils[x].classList.toggle("divHover");
+        window.setTimeout(function() {
+            divsAgenda[x].style.opacity = 1;
+        },500);
     }
 }
 
+//texto a aumentar quando é feito hover
+
+arrayDeDivTils[0].addEventListener('mousemove',function(){
+    data(0,0,1);
+});
+arrayDeDivTils[0].addEventListener('mouseleave',function(){
+    data2(0,1);
+});
+arrayDeDivTils[1].addEventListener('mousemove',function(){
+    data(1,2,3);
+});
+arrayDeDivTils[1].addEventListener('mouseleave',function(){
+    data2(2,3);
+});
+arrayDeDivTils[2].addEventListener('mousemove',function(){
+    data(2,4,5);
+});
+arrayDeDivTils[2].addEventListener('mouseleave',function(){
+    data2(4,5);
+});
+
+function data(x,y,z){
+    if(arrayDeDivTils[x].classList.contains("divHover")){
+        textoData[y].style.fontSize = '5vw';
+        textoData[y].style.lineHeight = '5vw';
+        textoData[z].style.fontSize = '5vw';
+        textoData[z].style.lineHeight = '5vw';
+    }
+    else {
+        textoData[x].style.fontSize = '4vw';
+        textoData[x].style.lineHeight = '4vw';
+        textoData[y].style.fontSize = '4vw';
+        textoData[y].style.lineHeight = '4vw';
+    }
+}
+
+function data2(x,y){
+    textoData[x].style.fontSize = '4vw';
+    textoData[x].style.lineHeight = '4vw';
+    textoData[y].style.fontSize = '4vw';
+    textoData[y].style.lineHeight = '4vw';
+}
+
+//texto na classe agenda
+
+let profi = ['Type Designer','Artista Plástico','Engenheiro Informático','ArtEZ Institute of the Arts',
+                'Artes Sonoras','Designer Gráfico','Designer','Designer de Interação','Designer de Som'];
+function nomes(string,x,y){
+    let array = '';
+    for(let i = 0; i<string.length; i++){
+        if(string.charAt(i) === ' '){
+            array += '<span class="circulos"> </span>';
+        }
+        else {
+            let r = Math.floor(Math.random() * (3));
+            if (r === 1) {
+                array += '<span class="triangulos">' + string.charAt(i) + '</span>';
+            } else if (r === 2) {
+                array += '<span class="circulos">' + string.charAt(i) + '</span>';
+            } else {
+                array += '<span class="quadrados">' + string.charAt(i) + '</span>';
+            }
+        }
+    }
+    divsAgenda[x].insertAdjacentHTML('beforeend','<p>'+profi[y]+'</p>');
+    divsAgenda[x].insertAdjacentHTML('beforeend',array);
+}
+
+nomes('mário feliciano',0,0);
+nomes('joao sousa',0,1);
+nomes('andré freitas',0,2);
+nomes('thomas castro',1,3);
+nomes('diana combo',1,4);
+nomes('frederico luís',1,5);
+nomes('luna maurer',2,6);
+nomes('rui pereira',2,7);
+nomes('antónio louro',2,8);
 
 
 
@@ -179,30 +271,3 @@ function sair(){
     museuinfo.style.display = "none";
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

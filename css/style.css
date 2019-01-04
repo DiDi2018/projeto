@@ -8,14 +8,26 @@ hr {
     src: url("fonts/triangulos-design.ttf");
 }
 
+.triangulos {
+    font-family: 'Triângulos_Design', sans-serif;
+}
+
 @font-face {
     font-family: "Círculos_Arte";
     src: url("fonts/circulos-arte.ttf");
 }
 
+.circulos {
+    font-family: 'Círculos_Arte', sans-serif;
+}
+
 @font-face {
     font-family: "Quadrados_Tecnologia";
     src: url("fonts/quadrados-tecnologia.ttf");
+}
+
+.quadrados {
+    font-family: 'Quadrados_Tecnologia', sans-serif;
 }
 
 body {
@@ -131,23 +143,11 @@ main {
 }
 
 #sobre > .titulos {
-    font-size: 3em;
+    font-size: 4.5em;
 }
 
-#sobre > .titulos > p:first-child {
+#sobre > .titulos > p {
     margin: 0;
-    font-family: 'Triângulos_Design', sans-serif;
-    /*padding-top: calc((100vh - 7vw - 3 * 1em) / 2);*/
-}
-
-#sobre > .titulos > p:nth-child(2) {
-    margin: 0;
-    font-family: 'Círculos_Arte', sans-serif;
-}
-
-#sobre > .titulos > p:last-child {
-    margin: 0;
-    font-family: 'Quadrados_Tecnologia', sans-serif;
 }
 
 #sobre > .texto {
@@ -165,7 +165,7 @@ main {
 }
 
 .divAltura {
-    height: calc(30vw + (100vw / 14 * 125 / 250)) !important;
+    height: calc(30vw + (100vw / 8 * 125 / 250)) !important;
 }
 
 .divTransition {
@@ -175,35 +175,73 @@ main {
 
 #edicao2018 > div {
     flex: 1;
-    display: inline-block;
+    position: relative;
 }
 
-#edicao2018 > div > div {
-    width: calc(100vw / 14 * 2);
-    height: calc(100vw / 14 * 125 / 250 * 2);
+#edicao2018 > div > div:last-child {
+    width: calc(100vw / 10 * 2);
+    height: calc(100vw / 10 * 125 / 250 * 2);
     margin-left: auto;
     margin-right: auto;
     position: relative;
 }
 
-#edicao2018 > div > div > svg {
-    width: calc(100vw / 14);
+#edicao2018 > div > p {
+    position: absolute;
+    margin: 0;
+    font-size: 4vw;
+    line-height: 4vw;
+    transition-duration: 1s;
+}
+
+#edicao2018 > div > p:first-child {
+    bottom: 0;
+    right: 52.5%;
+    transition-property: bottom;
+}
+
+#edicao2018 > div > p:nth-child(2) {
+    left: 52.5%;
+    transition-property: top;
+    top: initial;
+}
+
+#edicao2018 > div > div:last-child > svg {
+    width: calc(100vw / 10);
     height: auto;
     position: relative;
 }
 
-#edicao2018 > div > div > svg:last-child {
+#edicao2018 > div > div:last-child > svg:last-child {
     position: absolute;
     bottom: 0;
 }
 
-#edicao2018 > div > div:hover {
-    width: calc(100vw / 12 * 2);
-    height: calc(100vw / 12 * 125 / 250 * 2);
+.divHover:hover {
+    width: calc(100vw / 8 * 2) !important;
+    height: calc(100vw / 8 * 125 / 250 * 2) !important;
 }
 
-#edicao2018 > div > div:hover > svg {
-    width: calc(100vw / 12);
+.divHover:hover > svg {
+    width: calc(100vw / 8) !important;
+}
+
+.agenda {
+    position: absolute;
+    opacity: 0;
+    left: 25%;
+    bottom: calc(100vw / 10 * 125 / 250 + 2.5vw);
+    transition-duration: 0.5s;
+    transition-property: opacity;
+}
+
+.agenda > span {
+    font-size: 3vw;
+}
+
+.agenda > p {
+    font-size: 1.25vw;
+    margin: 0;
 }
 
 /*intervinientes*/
