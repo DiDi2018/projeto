@@ -165,7 +165,7 @@ main {
 }
 
 .divAltura {
-    height: calc(30vw + (100vw / 8 * 125 / 250)) !important;
+    height: calc(23.75vw + (100vw / 8 * 125 / 250 * 2)) !important;
 }
 
 .divTransition {
@@ -192,18 +192,16 @@ main {
     font-size: 4vw;
     line-height: 4vw;
     transition-duration: 1s;
+    transition-property: bottom;
 }
 
 #edicao2018 > div > p:first-child {
     bottom: 0;
     right: 52.5%;
-    transition-property: bottom;
 }
 
 #edicao2018 > div > p:nth-child(2) {
     left: 52.5%;
-    transition-property: top;
-    top: initial;
 }
 
 #edicao2018 > div > div:last-child > svg {
@@ -237,10 +235,12 @@ main {
 
 .agenda > span {
     font-size: 3vw;
+    line-height: 3vw;
 }
 
 .agenda > p {
     font-size: 1.25vw;
+    line-height: 1.25vw;
     margin: 0;
 }
 

@@ -120,24 +120,28 @@ function abrirTils(x,y,z){
     if(arrayDeDivTils[x].classList.contains("divTransition")){
         divsAgenda[x].style.opacity = 0;
         window.setTimeout(function(){
-            arrayDeDivTils[x].classList.toggle("divTransition");
-            arrayDeDivTils[x].classList.toggle("divHover");
-        },1250);
-        window.setTimeout(function(){
-            textoData[y].style.bottom = "0";
-            textoData[z].style.top = "0";
+            textoData[y].style.removeProperty('bottom');
+            textoData[z].style.bottom = 'calc(100vw / 10 * 125 / 250 + (100vw / 10 * 125 / 250 - 4vw))';
             arrayDeDivTils[x].classList.toggle("divAltura");
         },250);
+        window.setTimeout(function(){
+            arrayDeDivTils[x].classList.toggle("divTransition");
+            arrayDeDivTils[x].classList.toggle("divHover");
+            textoData[z].style.removeProperty('bottom');
+        },1250);
     }
     else {
-        textoData[y].style.bottom = "calc(30vw + (100vw / 8 * 125 / 250) - (100vw / 10 * 125 / 250 + 2.5vw) - 4vw)";
-        textoData[z].style.top = "calc(100vw / 10 * 125 / 250 + 2.5vw)";
-        arrayDeDivTils[x].classList.toggle("divAltura");
-        arrayDeDivTils[x].classList.toggle("divTransition");
-        arrayDeDivTils[x].classList.toggle("divHover");
+        textoData[z].style.bottom = 'calc(100vw / 8 * 125 / 250 + (100vw / 8 * 125 / 250 - 5vw))';
+        window.setTimeout(function(){
+            textoData[y].style.bottom = 'calc((23.75vw + (100vw / 8 * 125 / 250 * 2)) - (100vw / 8 * 125 / 250) - 1.75vw - 4vw)';
+            textoData[z].style.bottom = 'calc((23.75vw + (100vw / 8 * 125 / 250 * 2)) - (100vw / 8 * 125 / 250) - 1.75vw - 4vw)';
+            arrayDeDivTils[x].classList.toggle("divAltura");
+            arrayDeDivTils[x].classList.toggle("divTransition");
+            arrayDeDivTils[x].classList.toggle("divHover");
+        },1);
         window.setTimeout(function() {
             divsAgenda[x].style.opacity = 1;
-        },500);
+        },501);
     }
 }
 
@@ -170,10 +174,10 @@ function data(x,y,z){
         textoData[z].style.lineHeight = '5vw';
     }
     else {
-        textoData[x].style.fontSize = '4vw';
-        textoData[x].style.lineHeight = '4vw';
         textoData[y].style.fontSize = '4vw';
         textoData[y].style.lineHeight = '4vw';
+        textoData[z].style.fontSize = '4vw';
+        textoData[z].style.lineHeight = '4vw';
     }
 }
 
@@ -204,6 +208,9 @@ function nomes(string,x,y){
                 array += '<span class="quadrados">' + string.charAt(i) + '</span>';
             }
         }
+    }
+    if(y!==0 && y!==3 && y!==6){
+        divsAgenda[x].insertAdjacentHTML('beforeend','<p style="font-size: 0.5vw; line-height: 0.5vw;"><br></p>');
     }
     divsAgenda[x].insertAdjacentHTML('beforeend','<p>'+profi[y]+'</p>');
     divsAgenda[x].insertAdjacentHTML('beforeend',array);
