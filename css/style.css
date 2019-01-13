@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 hr {
     padding: 0;
     margin: 0;
@@ -103,6 +107,7 @@ header > nav > ul > li > a {
     text-decoration: none;
     font-weight: lighter;
     color: black;
+    font-size: 1.3em;
 }
 
 header > nav > ul > li:last-child {
@@ -143,7 +148,7 @@ main {
 }
 
 #sobre > .titulos {
-    font-size: 4.5em;
+    font-size: 5em;
 }
 
 #sobre > .titulos > p {
@@ -151,12 +156,14 @@ main {
 }
 
 #sobre > .texto {
-    width: 50vw;
+    width: 56vw;
+    line-height: 2.1em;
+
 }
 
-/*edição 2018*/
+/*edição 2019*/
 
-#edicao2018 {
+#edicao2019 {
     min-height: calc(100vh - 7vw);
     /*scroll-snap-align: start;*/
     display: flex;
@@ -173,12 +180,12 @@ main {
     transition-property: height;
 }
 
-#edicao2018 > div {
+#edicao2019 > div {
     flex: 1;
     position: relative;
 }
 
-#edicao2018 > div > div:last-child {
+#edicao2019 > div > div:last-child {
     width: calc(100vw / 10 * 2);
     height: calc(100vw / 10 * 125 / 250 * 2);
     margin-left: auto;
@@ -186,7 +193,7 @@ main {
     position: relative;
 }
 
-#edicao2018 > div > p {
+#edicao2019 > div > p {
     position: absolute;
     margin: 0;
     font-size: 4vw;
@@ -195,22 +202,22 @@ main {
     transition-property: bottom;
 }
 
-#edicao2018 > div > p:first-child {
+#edicao2019 > div > p:first-child {
     bottom: 0;
     right: 52.5%;
 }
 
-#edicao2018 > div > p:nth-child(2) {
+#edicao2019 > div > p:nth-child(2) {
     left: 52.5%;
 }
 
-#edicao2018 > div > div:last-child > svg {
+#edicao2019 > div > div:last-child > svg {
     width: calc(100vw / 10);
     height: auto;
     position: relative;
 }
 
-#edicao2018 > div > div:last-child > svg:last-child {
+#edicao2019 > div > div:last-child > svg:last-child {
     position: absolute;
     bottom: 0;
 }
@@ -256,54 +263,66 @@ main {
 #locais {
     min-height: calc(100vh - 7vw);
     position: relative;
+
     /*scroll-snap-align: start;*/
 }
 
 .fundo {
-    position: relative;
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+
 }
 
 .molduras {
     position: relative;
-    width: calc(100vw / 5);
-    margin-left: calc(40vw / 4);
+    margin:0 5vw;
     display: inline-block;
 }
 
 .molduras > img:first-child {
     position: relative;
     top: 0;
-    left: -10vw;
-    width: calc(100vw / 5);
+    width: 20vw;
     height: auto;
-    margin-left: calc(40vw / 4);
 }
 
 .molduras > img:last-child {
     position: absolute;
     top: 0;
-    left: -10vw;
-    width: calc(100vw / 5);
+    left: 0;
+    width: 20vw;
     height: auto;
-    margin-left: calc(40vw / 4);
 }
 
 .molduras > img:last-child:hover {
-    width: calc(100vw / 4);
+    transition-duration: 0.3s;
+    width: 25vw;
     top: -10%;
+    left: -5vw;
+    cursor: pointer;
+    margin: 0 calc(25vw/6);
 
 }
-
 .fundo2 {
-    width: 80.9%;
+    width:82vw;
     position: absolute;
-    height: 33.1vw;
+    height: 33.2vw;
     top: 0;
-    left: 10%;
+    left: 9vw;
     margin: auto;
-    background: black;
     display: none;
+    text-align: left;
 }
+.caixa{
+    width:82vw;
+    height: auto;
+    margin: auto;
+}
+
+
 
 .cruz {
     width: 5%;
@@ -314,19 +333,41 @@ main {
 }
 
 .imagemlocal {
-    height: 27vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    left: 3vw;
+    height: 25vw;
     width: auto;
     margin: 3vw;
 }
 
-.fundo2  p {
-    display: inline-block;
-    color: white;
+
+
+.fundo  span{
     width: 40%;
     position: absolute;
     top: 50%;
     transform:translateY(-50%);
+    right: 1vw;
     margin-left: 4vw;
+
+
+}
+
+.icon{
+    height: 2.3vw;
+    width: auto;
+    margin-right: 2vw;
+    position: absolute;
+    top: 0;
+    left: -4vw;
+
+}
+
+.fundo2  p {
+    display: inline-block;
+    font-size: 1em;
 }
 
 /*contactos*/
