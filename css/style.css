@@ -276,6 +276,7 @@ main {
     width: calc(100vw / 14 * 8);
     margin-left: 2vw;
     margin-bottom: 2vw;
+    margin-right: 2vw;
 }
 
 .pessoaNome > p {
@@ -310,8 +311,8 @@ main {
     order: 4;
     align-self: flex-start;
     width: calc(100vw / 14 * 8);
-    font-size: 1.5vw;
     margin-left: 2vw;
+    margin-right: 2vw;
 }
 
 /*locais*/
