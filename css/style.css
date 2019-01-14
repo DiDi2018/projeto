@@ -262,6 +262,58 @@ main {
     /*scroll-snap-align: start;*/
 }
 
+.pessoa {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    min-height: calc(100vh - 7vw);
+    margin-bottom: 2vw;
+}
+
+.pessoaNome {
+    order: 2;
+    width: calc(100vw / 14 * 8);
+    margin-left: 2vw;
+    margin-bottom: 2vw;
+}
+
+.pessoaNome > p {
+    font-size: 8vw;
+}
+
+.pessoaImagem {
+    order: 1;
+    margin-bottom: 2vw;
+}
+
+.pessoaImagem > img {
+    width: calc(100vw / 14 * 4);
+    height: auto;
+}
+
+.pessoaPeca {
+    order: 3;
+    width: calc(100vw / 14 * 5);
+    align-self: flex-start;
+    position: relative;
+}
+
+.pessoaPeca > img {
+    width: calc(100vw / 14);
+    height: auto;
+    position: absolute;
+    right: 0;
+}
+
+.pessoaTexto {
+    order: 4;
+    align-self: flex-start;
+    width: calc(100vw / 14 * 8);
+    font-size: 1.5vw;
+    margin-left: 2vw;
+}
+
 /*locais*/
 
 #locais {
