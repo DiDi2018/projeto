@@ -73,8 +73,11 @@ header > a {
 }
 
 header > a > img {
-    height: 7vw;
+    height: 4vw;
     width: auto;
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
 }
 
 header > nav > ul {
@@ -359,18 +362,18 @@ main {
 }
 
 .icon {
-    height: 1.5vw;
+    height: 2vw;
     width: auto;
     margin-right: 2vw;
     position: absolute;
-    top: 0.5vh;
+    top: 0.4vh;
     left: -3vw;
 
 }
 
 .fundo2 p {
     display: inline-block;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
 }
 
 /*contactos*/
