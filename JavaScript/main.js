@@ -246,7 +246,7 @@ museu.addEventListener("click", aparecermuseu);
 function aparecermuseu() {
     fundo.style.display = "block";
     sombra.style.backgroundColor = "rgb(0,0,0,0.8)";
-    sombra.style.transition ="1s";
+    sombra.style.transition = "1s";
     museuinfo.style.display = "block";
     darqinfo.style.display = "none";
     deiinfo.style.display = "none";
@@ -258,7 +258,7 @@ dei.addEventListener("click", aparecerdei);
 function aparecerdei() {
     fundo.style.display = "block";
     sombra.style.backgroundColor = "rgb(0,0,0,0.8)";
-    sombra.style.transition ="1s";
+    sombra.style.transition = "1s";
     deiinfo.style.display = "block";
     museuinfo.style.display = "none";
     darqinfo.style.display = "none";
@@ -270,7 +270,7 @@ darq.addEventListener("click", aparecerdarq);
 function aparecerdarq() {
     fundo.style.display = "block";
     sombra.style.backgroundColor = "rgb(0,0,0,0.8)";
-    sombra.style.transition ="1s";
+    sombra.style.transition = "1s";
     darqinfo.style.display = "block";
     deiinfo.style.display = "none";
     museuinfo.style.display = "none";
@@ -289,6 +289,17 @@ function sair() {
     deiinfo.style.display = "none";
     museuinfo.style.display = "none";
 }
+
+document.addEventListener("click", function (evt) {
+    let dentrodarq = darq.contains(evt.target);
+    let dentrodei = dei.contains(evt.target);
+    let dentromuseu = museu.contains(evt.target);
+    let dentro2 = fundo.contains(evt.target);
+
+    if (!dentrodarq && !dentrodei && !dentromuseu && !dentro2) {
+        return sair();
+    }
+});
 
 
 
