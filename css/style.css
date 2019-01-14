@@ -266,7 +266,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: center;
     min-height: calc(100vh - 7vw);
     margin-bottom: 2vw;
 }
@@ -276,7 +276,6 @@ main {
     width: calc(100vw / 14 * 8);
     margin-left: 2vw;
     margin-bottom: 2vw;
-    margin-right: 2vw;
 }
 
 .pessoaNome > p {
@@ -295,7 +294,7 @@ main {
 
 .pessoaPeca {
     order: 3;
-    width: calc(100vw / 14 * 5);
+    width: calc(100vw / 14 * 4);
     align-self: flex-start;
     position: relative;
 }
@@ -312,7 +311,6 @@ main {
     align-self: flex-start;
     width: calc(100vw / 14 * 8);
     margin-left: 2vw;
-    margin-right: 2vw;
 }
 
 /*locais*/
