@@ -12,8 +12,7 @@ let inter = document.getElementById("intervenientesID");
 let locais = document.getElementById("locaisID");
 let contactos = document.getElementById("contactosID");
 
-let altura1 = window.innerHeight / 4;
-let altura2 = -window.innerHeight / 2;
+let altura1 = window.innerHeight / 2;
 
 /*cada nome da secção em negrito quando ela está à vista*/
 
@@ -24,35 +23,35 @@ document.addEventListener('scroll', function () {
     let rectLocais = document.getElementById("locais").getBoundingClientRect();
     let rectContactos = document.getElementById("contactos").getBoundingClientRect();
 
-    if (rectSobre.top <= altura1 && rectSobre.top >= altura2) {
+    if (rectSobre.top <= altura1 && rectSobre.top >= -altura1) {
         sobre.classList.add("bold");
         edicao.classList.remove("bold");
         inter.classList.remove("bold");
         locais.classList.remove("bold");
         contactos.classList.remove("bold");
     }
-    else if (rectEdic.top <= altura1 && rectEdic.top >= altura2) {
+    else if (rectEdic.top <= altura1 && rectEdic.top >= -altura1) {
         sobre.classList.remove("bold");
         edicao.classList.add("bold");
         inter.classList.remove("bold");
         locais.classList.remove("bold");
         contactos.classList.remove("bold");
     }
-    else if (rectInter.top <= altura1 && rectInter.top >= rectInter.height / 0.75) {
+    else if (rectInter.top <= altura1 && rectInter.bottom >= altura1) {
         sobre.classList.remove("bold");
         edicao.classList.remove("bold");
         inter.classList.add("bold");
         locais.classList.remove("bold");
         contactos.classList.remove("bold");
     }
-    else if (rectLocais.top <= altura1 && rectLocais.top >= altura2) {
+    else if (rectLocais.top <= altura1 && rectLocais.top >= -altura1) {
         sobre.classList.remove("bold");
         edicao.classList.remove("bold");
         inter.classList.remove("bold");
         locais.classList.add("bold");
         contactos.classList.remove("bold");
     }
-    else if (rectContactos.top <= altura1 && rectContactos.top >= altura2) {
+    else if (rectContactos.top <= altura1 && rectContactos.top >= -altura1) {
         sobre.classList.remove("bold");
         edicao.classList.remove("bold");
         inter.classList.remove("bold");
