@@ -71,13 +71,12 @@ function headerScroll(){
     let videos = document.querySelectorAll('.pessoaNome > video');
     let videoPos = [];
     for (let i = 0; i < videos.length; i++){
-        videoPos[i] = videos[i].getBoundingClientRect();
-        if(videoPos[i].top <= window.innerHeight/4*3 && videoPos[i].top >= window.innerWidth*0.07){
-            if(cont[i]===0){
+        if(cont[i]===0){
+            videoPos[i] = videos[i].getBoundingClientRect();
+            if(videoPos[i].top <= window.innerHeight/4*3 && videoPos[i].top >= window.innerWidth*0.07){
                 videos[i].play();
                 cont[i]=cont[i]+1;
             }
-
         }
     }
 }
@@ -164,7 +163,7 @@ function abrirTils(x, y, z) {
     }
 }
 
-//texto a aumentar quando é feito hover
+//texto a aumentar quando é feito hover no sobre
 
 arrayDeDivTils[0].addEventListener('mousemove', function () {
     data(0, 0, 1);
