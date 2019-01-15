@@ -17,12 +17,76 @@ let cont = [0,0,0];
 
 /*cada nome da secção em negrito quando ela está à vista*/
 
+let rectSobre = document.getElementById("sobre").getBoundingClientRect();
+let rectEdic = document.getElementById("edicao2019").getBoundingClientRect();
+let rectInter = document.getElementById("intervenientes").getBoundingClientRect();
+let rectLocais = document.getElementById("locais").getBoundingClientRect();
+let rectContactos = document.getElementById("contactos").getBoundingClientRect();
+
+if (rectSobre.top <= altura1 && rectSobre.bottom >= altura1) {
+    sobre.classList.add("bold");
+    edicao.classList.remove("bold");
+    inter.classList.remove("bold");
+    locais.classList.remove("bold");
+    contactos.classList.remove("bold");
+}
+else if (rectEdic.top <= altura1 && rectEdic.bottom >= altura1) {
+    sobre.classList.remove("bold");
+    edicao.classList.add("bold");
+    inter.classList.remove("bold");
+    locais.classList.remove("bold");
+    contactos.classList.remove("bold");
+}
+else if (rectInter.top <= altura1 && rectInter.bottom >= altura1) {
+    sobre.classList.remove("bold");
+    edicao.classList.remove("bold");
+    inter.classList.add("bold");
+    locais.classList.remove("bold");
+    contactos.classList.remove("bold");
+}
+else if (rectLocais.top <= altura1 && rectLocais.bottom >= altura1) {
+    sobre.classList.remove("bold");
+    edicao.classList.remove("bold");
+    inter.classList.remove("bold");
+    locais.classList.add("bold");
+    contactos.classList.remove("bold");
+}
+else if (rectContactos.top <= altura1 && rectContactos.bottom >= altura1) {
+    sobre.classList.remove("bold");
+    edicao.classList.remove("bold");
+    inter.classList.remove("bold");
+    locais.classList.remove("bold");
+    contactos.classList.add("bold");
+}
+else {
+    sobre.classList.remove("bold");
+    edicao.classList.remove("bold");
+    inter.classList.remove("bold");
+    locais.classList.remove("bold");
+    contactos.classList.remove("bold");
+}
+
+/*nomes dos intervenientes em video a fazer play*/
+let videos = document.querySelectorAll('.pessoaNome > video');
+let videoPos = [];
+for (let i = 0; i < videos.length; i++){
+    videoPos[i] = videos[i].getBoundingClientRect();
+    if(videoPos[i].top <= window.innerHeight/4*3 && videoPos[i].top >= window.innerWidth*0.07){
+        if(cont[i]===0){
+            videos[i].play();
+            cont[i]=cont[i]+1;
+        }
+
+    }
+}
+
+/*atualizar quando é feito scroll*/
 document.addEventListener('scroll', function () {
-    let rectSobre = document.getElementById("sobre").getBoundingClientRect();
-    let rectEdic = document.getElementById("edicao2019").getBoundingClientRect();
-    let rectInter = document.getElementById("intervenientes").getBoundingClientRect();
-    let rectLocais = document.getElementById("locais").getBoundingClientRect();
-    let rectContactos = document.getElementById("contactos").getBoundingClientRect();
+    rectSobre = document.getElementById("sobre").getBoundingClientRect();
+    rectEdic = document.getElementById("edicao2019").getBoundingClientRect();
+    rectInter = document.getElementById("intervenientes").getBoundingClientRect();
+    rectLocais = document.getElementById("locais").getBoundingClientRect();
+    rectContactos = document.getElementById("contactos").getBoundingClientRect();
 
     if (rectSobre.top <= altura1 && rectSobre.bottom >= altura1) {
         sobre.classList.add("bold");
@@ -67,9 +131,7 @@ document.addEventListener('scroll', function () {
         contactos.classList.remove("bold");
     }
 
-    /*nomes em video a fazer play*/
-    let videos = document.querySelectorAll('.pessoaNome > video');
-    let videoPos = [];
+    /*nomes em video nos intervenientes a fazer play*/
     for (let i = 0; i < videos.length; i++){
         videoPos[i] = videos[i].getBoundingClientRect();
         if(videoPos[i].top <= window.innerHeight/4*3 && videoPos[i].top >= window.innerWidth*0.07){
