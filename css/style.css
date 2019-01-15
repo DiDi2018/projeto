@@ -278,8 +278,9 @@ main {
     margin-bottom: 2vw;
 }
 
-.pessoaNome > p {
-    font-size: 8vw;
+.pessoaNome > video {
+    width: calc(100vw / 14 * 8);
+    height: auto;
 }
 
 .pessoaImagem {
@@ -324,7 +325,7 @@ main {
 
 .fundo {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     text-align: center;
     top: 50%;
     transform: translateY(-50%);

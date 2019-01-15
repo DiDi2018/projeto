@@ -13,6 +13,7 @@ let locais = document.getElementById("locaisID");
 let contactos = document.getElementById("contactosID");
 
 let altura1 = window.innerHeight / 2;
+let cont = [0,0,0];
 
 /*cada nome da secção em negrito quando ela está à vista*/
 
@@ -23,14 +24,14 @@ document.addEventListener('scroll', function () {
     let rectLocais = document.getElementById("locais").getBoundingClientRect();
     let rectContactos = document.getElementById("contactos").getBoundingClientRect();
 
-    if (rectSobre.top <= altura1 && rectSobre.top >= -altura1) {
+    if (rectSobre.top <= altura1 && rectSobre.bottom >= altura1) {
         sobre.classList.add("bold");
         edicao.classList.remove("bold");
         inter.classList.remove("bold");
         locais.classList.remove("bold");
         contactos.classList.remove("bold");
     }
-    else if (rectEdic.top <= altura1 && rectEdic.top >= -altura1) {
+    else if (rectEdic.top <= altura1 && rectEdic.bottom >= altura1) {
         sobre.classList.remove("bold");
         edicao.classList.add("bold");
         inter.classList.remove("bold");
@@ -44,14 +45,14 @@ document.addEventListener('scroll', function () {
         locais.classList.remove("bold");
         contactos.classList.remove("bold");
     }
-    else if (rectLocais.top <= altura1 && rectLocais.top >= -altura1) {
+    else if (rectLocais.top <= altura1 && rectLocais.bottom >= altura1) {
         sobre.classList.remove("bold");
         edicao.classList.remove("bold");
         inter.classList.remove("bold");
         locais.classList.add("bold");
         contactos.classList.remove("bold");
     }
-    else if (rectContactos.top <= altura1 && rectContactos.top >= -altura1) {
+    else if (rectContactos.top <= altura1 && rectContactos.bottom >= altura1) {
         sobre.classList.remove("bold");
         edicao.classList.remove("bold");
         inter.classList.remove("bold");
@@ -64,6 +65,20 @@ document.addEventListener('scroll', function () {
         inter.classList.remove("bold");
         locais.classList.remove("bold");
         contactos.classList.remove("bold");
+    }
+
+    /*nomes em video a fazer play*/
+    let videos = document.querySelectorAll('.pessoaNome > video');
+    let videoPos = [];
+    for (let i = 0; i < videos.length; i++){
+        videoPos[i] = videos[i].getBoundingClientRect();
+        if(videoPos[i].top <= window.innerHeight/4*3 && videoPos[i].top >= window.innerWidth*0.07){
+            if(cont[i]===0){
+                videos[i].play();
+                cont[i]=cont[i]+1;
+            }
+
+        }
     }
 });
 
