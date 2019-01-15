@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>DAT - Design, Arte e Tecnologia</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <script src="JavaScript/p5.js"></script>
     <script src="JavaScript/sketch.js"></script>
@@ -137,7 +138,10 @@
                 <img src="images/MARIO_FELICIANO.jpeg" height="152" width="203" alt="Foto de Mário Feliciano">
             </div>
             <div class="pessoaPeca">
-                <img src="images/data/circulo_superior_direito.png" height="50" width="50" alt="">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/data/circulo_superior_esquerdo.png">
+                    <img src="images/data/circulo_superior_direito.png" height="50" width="50" alt="">
+                </picture>
             </div>
             <div class="pessoaTexto">
                 <p> Mário Feliciano (born 1969) studied graphic design at IADE (Lisbon) until 1993. <br>
@@ -173,7 +177,10 @@
                 <img src="images/Luna-Maurer.jpg" height="481" width="606" alt="Foto de Luna Maurer">
             </div>
             <div class="pessoaPeca">
-                <img src="images/data/triangulo_superior_direito.png" height="50" width="50" alt="">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/data/triangulo_superior_esquerdo.png">
+                    <img src="images/data/triangulo_superior_direito.png" height="50" width="50" alt="">
+                </picture>
             </div>
             <div class="pessoaTexto">
                 <p> Luna runs the Amsterdam-based design studio Moniker with Roel Wouters. (They founded it in 2012 with
@@ -204,7 +211,9 @@
                 <img src="images/THOMAS_CASTRO.jpg" height="490" width="641" alt="Foto de Thomas Castro">
             </div>
             <div class="pessoaPeca">
-                <img src="images/data/quadrado.png" height="50" width="50" alt="">
+                <picture>
+                    <img src="images/data/quadrado.png" height="50" width="50" alt="">
+                </picture>
             </div>
             <div class="pessoaTexto">
                 <p>Thomas Castro founded LUST with Jeroen Barendse, and Dimitri Nieuwenhuizen, a multidisciplinary graphic
@@ -297,17 +306,15 @@
         <h2>Contactos</h2>
         <a href="https://apps.uc.pt/mypage/faculty/uc26736/pt">Nuno Coelho</a>
         <a href="https://www.cisuc.uc.pt/people/show/2033">Tiago Martins</a>
-        <a href="https://www.uc.pt/">
-            <picture>
-                <img src="images/logoUC.png" width="2240" height="1800" alt="Universidade de Coimbra">
-            </picture>
-        </a>
     </div>
 </main>
 
 <footer>
-
-
+    <a href="https://www.uc.pt/">
+        <picture>
+            <img src="images/logoUC.png" width="2240" height="1800" alt="Universidade de Coimbra">
+        </picture>
+    </a>
 </footer>
 
 <script src="JavaScript/main.js"></script>

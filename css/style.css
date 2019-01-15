@@ -302,7 +302,7 @@ main {
     position: relative;
 }
 
-.pessoaPeca > img {
+.pessoaPeca > picture > img {
     width: calc(100vw / 18);
     height: auto;
     position: absolute;
@@ -321,7 +321,6 @@ main {
 #locais {
     min-height: calc(100vh - 7vw);
     position: relative;
-
     /*scroll-snap-align: start;*/
 }
 
@@ -331,7 +330,6 @@ main {
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
-
 }
 
 .molduras {
@@ -362,7 +360,6 @@ main {
     left: -5vw;
     cursor: pointer;
     margin: 0 calc(25vw / 6);
-
 }
 
 .fundo2 {
@@ -422,7 +419,6 @@ main {
     position: absolute;
     top: 0.4vh;
     left: -3vw;
-
 }
 
 .fundo2 p {
@@ -433,17 +429,66 @@ main {
 /*contactos*/
 
 #contactos {
-    min-height: calc(100vh - 7vw);
+    min-height: calc(100vh - 17vw);
     /*scroll-snap-align: start;*/
 }
 
-#contactos > a > picture {
+footer > a > picture {
     position: relative;
     margin-left: auto;
     display: block;
 }
 
-#contactos > a > picture > img {
-    width: 10%;
+footer > a > picture > img {
+    width: 10vw;
     height: auto;
+}
+
+@media (max-width: 768px){
+    /*intervenientes*/
+
+    .pessoaNome {
+        order: 1;
+        width: 100vw;
+    }
+
+    .pessoaNome > video {
+        width: 70vw;
+    }
+
+    .pessoaImagem {
+        order: 2;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .pessoaImagem > img {
+        width: 50vw;
+    }
+
+    .pessoaTexto {
+        order: 3;
+        width: 100vw;
+    }
+
+    .pessoaPeca {
+        order: 4;
+        width: 100vw;
+        height: 7vw;
+        margin: 2vw 0 2.5vw 2vw;
+    }
+
+    .pessoaPeca > picture > img{
+        width: 7vw;
+        right: unset;
+        left: 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+
+}
+
+@media (min-width: 1024px){
+
 }

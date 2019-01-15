@@ -73,7 +73,7 @@ function headerScroll(){
     for (let i = 0; i < videos.length; i++){
         if(cont[i]===0){
             videoPos[i] = videos[i].getBoundingClientRect();
-            if(videoPos[i].top <= window.innerHeight/4*3 && videoPos[i].top >= window.innerWidth*0.07){
+            if(videoPos[i].top <= window.innerHeight/4*3 && videoPos[i].top >= window.innerWidth*0.06){
                 videos[i].play();
                 cont[i]=cont[i]+1;
             }
@@ -105,6 +105,7 @@ let interDiv = document.getElementById("intervenientes");
 inter.addEventListener('click', function () {
     interDiv.scrollIntoView();
     window.scrollBy(0, -window.innerWidth * 0.07);
+    headerScroll();
 });
 
 let locaisDiv = document.getElementById("locais");
