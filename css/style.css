@@ -469,6 +469,7 @@ footer > a > picture > img {
     .pessoaTexto {
         order: 3;
         width: 100vw;
+        margin-right: 2vw;
     }
 
     .pessoaPeca {
