@@ -48,7 +48,7 @@ body {
     z-index: 5;
     background-color: white;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .loading > img {
@@ -431,7 +431,7 @@ main {
 /*contactos*/
 
 #contactos {
-    height: calc(100vh - 7vw);
+    min-height: calc(100vh - 7vw);
     /*scroll-snap-align: start;*/
 }
 
