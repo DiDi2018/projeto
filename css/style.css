@@ -447,8 +447,12 @@ main {
 /*contactos*/
 
 #contactos {
-    min-height: calc(100vh - 17vw);
+    min-height: calc(100vh - 7vw);
     /*scroll-snap-align: start;*/
+}
+
+footer {
+    min-height: calc(100vh - 7vw);
 }
 
 footer > a > picture {

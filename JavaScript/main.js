@@ -125,6 +125,7 @@ locais.addEventListener('click', function () {
 let contactosDiv = document.getElementById("contactos");
 contactos.addEventListener('click', function () {
     contactosDiv.scrollIntoView();
+    window.scrollBy(0, -window.innerWidth * 0.07);
 });
 
 /*clicar nos tils da secção edição 2019*/
