@@ -328,6 +328,32 @@ document.addEventListener("click", function (evt) {
     }
 });
 
+let localtipo=document.querySelectorAll(".localtipo");
+
+function titulolocal(string, x) {
+    let array = '';
+    for (let i = 0; i < string.length; i++) {
+        if (string.charAt(i) === ' ') {
+            array += '<span class="circulos"> </span>';
+        }
+        else {
+            let r = Math.floor(Math.random() * (3));
+            if (r === 1) {
+                array += '<span class="triangulos">' + string.charAt(i) + '</span>';
+            } else if (r === 2) {
+                array += '<span class="circulos">' + string.charAt(i) + '</span>';
+            } else {
+                array += '<span class="quadrados">' + string.charAt(i) + '</span>';
+            }
+        }
+    }
+    localtipo[x].insertAdjacentHTML('beforeend', array);
+}
+titulolocal('museu da ciência', 0);
+titulolocal('darq', 1);
+titulolocal('dei', 2);
+
+
 
 
 

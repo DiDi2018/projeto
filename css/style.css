@@ -398,7 +398,7 @@ main {
 .imagemlocal {
     position: absolute;
     top: 50%;
-    transform: translateY(-60%);
+    transform: translateY(-62%);
     left: 3vw;
     height: 25vw;
     width: auto;
@@ -408,8 +408,7 @@ main {
 .museuInfo div, .darqInfo div, .deiInfo div {
     width: 40%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 40%;
     right: 1vw;
     margin-left: 4vw;
 }
@@ -417,7 +416,7 @@ main {
 .museuInfo .icon {
     position: relative;
     margin-right: 0;
-    left: -1vw;
+    left: -3vw;
 }
 
 .icon {
@@ -433,6 +432,17 @@ main {
     display: inline-block;
     font-size: 1.4vw;
 }
+
+.localtipo{
+    display: inline-block;
+    width: 35%;
+    position: absolute;
+    font-size: 4vw;
+    top: 5.5vw;
+    left:50%;
+    margin-left:3vw ;
+}
+
 
 /*contactos*/
 
