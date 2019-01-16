@@ -452,6 +452,74 @@ footer > a > picture > img {
     height: auto;
 }
 
+.animacao {
+    height: calc(100vh - 14vw);
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.facebook img:hover{
+    left:-0.5vw;
+}
+.instagram img:hover{
+    right:-0.5vw;
+}
+
+
+.hiperligacao {
+    position:relative;
+    margin: auto;
+    width:20%
+}
+
+.hiperligacao > a {
+    text-decoration: none;
+    display:inline-block;
+    height: 7vw;
+
+}
+
+footer img{
+    line-height: 7vw;
+    position: absolute;
+
+}
+
+.facebook img{
+    left: 0;
+    height: 3vw;
+    width: auto;
+}
+.instagram img {
+    right: 0;
+    height: 3vw;
+    width: auto;
+}
+
+.uc img {
+    left: 50%;
+    transform: translateX(-57%);
+    width: auto;
+    height: 4vw;
+}
+
+
+.facebook img:hover, .instagram img:hover {
+    height: 4vw;
+    width: auto;
+
+}
+
+.uc img:hover {
+    height: 5vw;
+    width: auto;
+
+
+}
+
+
 @media (max-width: 768px){
 
     .showSeccao {
