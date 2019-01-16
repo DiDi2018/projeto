@@ -514,7 +514,7 @@ footer > a > picture > img {
 footer img{
     line-height: 7vw;
     position: absolute;
-    top: 0.5vw;
+    top: 1.5vw;
 }
 
 .facebook img{
@@ -531,6 +531,7 @@ footer img{
 
 .uc img {
     left: 50%;
+    top: 0.5vw;
     transform: translateX(-50%);
     width: auto;
     height: 5vw;
@@ -540,7 +541,7 @@ footer img{
 .facebook img:hover, .instagram img:hover {
     height: 4vw;
     width: auto;
-    top: 0;
+    top: 1vw;
 }
 
 .uc img:hover {
