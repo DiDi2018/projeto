@@ -75,9 +75,9 @@ header > a {
 header > a > img {
     height: 4vw;
     width: auto;
-    position:relative;
-    top:50%;
-    transform:translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 header > nav > ul {
@@ -333,11 +333,11 @@ main {
 }
 
 .fundo {
-    position: absolute;
-    width: 100%;
+    height: calc(100vh - 7vw);
+    display: flex;
+    align-items: center;
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
+
 }
 
 .molduras {
@@ -433,16 +433,15 @@ main {
     font-size: 1.4vw;
 }
 
-.localtipo{
+.localtipo {
     display: inline-block;
     width: 35%;
     position: absolute;
     font-size: 4vw;
     top: 5.5vw;
-    left:50%;
-    margin-left:3vw ;
+    left: 50%;
+    margin-left: 3vw;
 }
-
 
 /*contactos*/
 
@@ -474,54 +473,54 @@ footer > a > picture > img {
     transform: translateX(-50%);
 }
 
-.facebook img:hover{
-    left:-0.5vw;
-}
-.instagram img:hover{
-    right:-0.5vw;
-}
-
-
-.hiperligacao {
-    position:relative;
-    margin: auto;
-    width:20%
-}
-
-.hiperligacao > a {
-    text-decoration: none;
-    display:inline-block;
-    height: 7vw;
-
-}
-
-.facebook img:hover{
+.facebook img:hover {
     left: -0.5vw;
 }
 
-.instagram img:hover{
+.instagram img:hover {
     right: -0.5vw;
 }
 
 .hiperligacao {
-    position:relative;
+    position: relative;
     margin: auto;
-    width:20%
+    width: 20%
 }
 
 .hiperligacao > a {
     text-decoration: none;
-    display:inline-block;
+    display: inline-block;
+    height: 7vw;
+
+}
+
+.facebook img:hover {
+    left: -0.5vw;
+}
+
+.instagram img:hover {
+    right: -0.5vw;
+}
+
+.hiperligacao {
+    position: relative;
+    margin: auto;
+    width: 20%
+}
+
+.hiperligacao > a {
+    text-decoration: none;
+    display: inline-block;
     height: 7vw;
 }
 
-footer img{
+footer img {
     line-height: 7vw;
     position: absolute;
     top: 1.5vw;
 }
 
-.facebook img{
+.facebook img {
     left: 0;
     height: 3vw;
     width: auto;
@@ -541,7 +540,6 @@ footer img{
     height: 5vw;
 }
 
-
 .facebook img:hover, .instagram img:hover {
     height: 4vw;
     width: auto;
@@ -554,15 +552,12 @@ footer img{
     top: 0;
 }
 
-
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
     .showSeccao {
         display: block;
-        width: 50vw;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100vw;
+        text-align: right;
         padding-top: 2vw;
         padding-bottom: 5vw;
         font-size: 5vw;
@@ -571,13 +566,11 @@ footer img{
     }
 
     /*edicao 2019*/
-
     #edicao2019flex {
         height: calc(100vh - 19vw);
     }
 
     /*intervenientes*/
-
     .pessoaNome {
         order: 1;
         width: 100vw;
@@ -590,7 +583,8 @@ footer img{
     .pessoaImagem {
         order: 2;
         width: 100vw;
-        text-align: center;
+        text-align: left;
+        margin-left: 2vw;
     }
 
     .pessoaImagem > img {
@@ -610,17 +604,52 @@ footer img{
         margin: 2vw 0 2.5vw 2vw;
     }
 
-    .pessoaPeca > picture > img{
+    .pessoaPeca > picture > img {
         width: 7vw;
         right: unset;
         left: 0;
     }
+
+    /*LOCAIS*/
+    .molduras, .caixa, .cruz {
+        display: none;
+    }
+
+    .fundo2, .deiInfo, .darqInfo, .museuInfo {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .imagemlocal {
+        position: relative;
+        left: 0;
+        display: block;
+    }
+
+    .localtipo {
+        position: relative;
+        left: 0;
+        top: 0;
+
+    }
+
+    .fundo2 {
+        width: 90vw;
+    }
+
+    .fundo {
+        position: relative;
+        top: 0;
+    }
+
 }
 
-@media (min-width: 769px) and (max-width: 1024px){
+@media (min-width: 769px) and (max-width: 1024px) {
 
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
 
 }
