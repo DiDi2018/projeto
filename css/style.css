@@ -491,10 +491,30 @@ footer > a > picture > img {
 
 }
 
+.facebook img:hover{
+    left: -0.5vw;
+}
+
+.instagram img:hover{
+    right: -0.5vw;
+}
+
+.hiperligacao {
+    position:relative;
+    margin: auto;
+    width:20%
+}
+
+.hiperligacao > a {
+    text-decoration: none;
+    display:inline-block;
+    height: 7vw;
+}
+
 footer img{
     line-height: 7vw;
     position: absolute;
-
+    top: 0.5vw;
 }
 
 .facebook img{
@@ -502,6 +522,7 @@ footer img{
     height: 3vw;
     width: auto;
 }
+
 .instagram img {
     right: 0;
     height: 3vw;
@@ -510,23 +531,22 @@ footer img{
 
 .uc img {
     left: 50%;
-    transform: translateX(-57%);
+    transform: translateX(-50%);
     width: auto;
-    height: 4vw;
+    height: 5vw;
 }
 
 
 .facebook img:hover, .instagram img:hover {
     height: 4vw;
     width: auto;
-
+    top: 0;
 }
 
 .uc img:hover {
-    height: 5vw;
+    height: 6vw;
     width: auto;
-
-
+    top: 0;
 }
 
 
