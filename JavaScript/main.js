@@ -121,9 +121,9 @@ contactos.addEventListener('click', function () {
 
 /*clicar nos tils da secção edição 2019*/
 
-let arrayDeDivTils = document.querySelectorAll("#edicao2019 > div > div:nth-child(4)");
+let arrayDeDivTils = document.querySelectorAll("#edicao2019flex > div > div:nth-child(4)");
 let divsAgenda = document.querySelectorAll(".agenda");
-let textoData = document.querySelectorAll("#edicao2019 > div > p");
+let textoData = document.querySelectorAll("#edicao2019flex > div > p");
 
 arrayDeDivTils[0].addEventListener("click", function () {
     abrirTils(0, 0, 1);
