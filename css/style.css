@@ -336,7 +336,7 @@ main {
     height: calc(100vh - 7vw);
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content:center;
 
 }
 
@@ -374,9 +374,7 @@ main {
     width: 82vw;
     position: absolute;
     height: 33.2vw;
-    top: 0;
     left: 9vw;
-    margin: auto;
     display: none;
     text-align: left;
 }
