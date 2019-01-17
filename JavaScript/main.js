@@ -24,7 +24,7 @@ function headerScroll(){
     let rectLocais = document.getElementById("locais").getBoundingClientRect();
     let rectContactos = document.getElementById("contactos").getBoundingClientRect();
 
-    if (rectSobre.top <= altura1 && rectSobre.bottom >= altura1) {
+    if (rectSobre.top <=altura1 && rectSobre.bottom >= altura1) {
         sobre.classList.add("bold");
         edicao.classList.remove("bold");
         inter.classList.remove("bold");
@@ -92,7 +92,7 @@ function headerScroll(){
 headerScroll();
 
 /*atualizar quando é feito scroll*/
-document.addEventListener('scroll', headerScroll);
+document.querySelector('main').addEventListener('scroll', headerScroll);
 
 
 /*clicar na barra de navegação*/
@@ -100,32 +100,31 @@ document.addEventListener('scroll', headerScroll);
 let sobreDiv = document.getElementById("sobre");
 sobre.addEventListener('click', function () {
     sobreDiv.scrollIntoView();
-    window.scrollBy(0, -window.innerWidth * 0.07);
+    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
 });
 
 let edicaoDiv = document.getElementById("edicao2019");
 edicao.addEventListener('click', function () {
     edicaoDiv.scrollIntoView();
-    window.scrollBy(0, -window.innerWidth * 0.07);
+    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
 });
 
 let interDiv = document.getElementById("intervenientes");
 inter.addEventListener('click', function () {
     interDiv.scrollIntoView();
-    window.scrollBy(0, -window.innerWidth * 0.07);
-    headerScroll();
+    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
 });
 
 let locaisDiv = document.getElementById("locais");
 locais.addEventListener('click', function () {
     locaisDiv.scrollIntoView();
-    window.scrollBy(0, -window.innerWidth * 0.07);
+    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
 });
 
 let contactosDiv = document.getElementById("contactos");
 contactos.addEventListener('click', function () {
     contactosDiv.scrollIntoView();
-    window.scrollBy(0, -window.innerWidth * 0.07);
+    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
 });
 
 /*clicar nos tils da secção edição 2019*/
@@ -353,9 +352,6 @@ function titulolocal(string, x) {
 titulolocal('museu da ciência', 0);
 titulolocal('darq', 1);
 titulolocal('dei', 2);
-
-
-
 
 
 
