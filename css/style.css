@@ -407,28 +407,25 @@ main {
     width: 40%;
     position: absolute;
     top: 40%;
-    right: 1vw;
-    margin-left: 4vw;
+    right: 4vw;
 }
 
 .museuInfo .icon {
     position: relative;
-    margin-right: 0;
-    left: -3vw;
 }
 
 .icon {
     height: 2vw;
     width: auto;
-    margin-right: 2vw;
     position: absolute;
     top: 0.4vh;
-    left: -3vw;
+    left: 0;
 }
 
 .fundo2 p {
     display: inline-block;
     font-size: 1.4vw;
+    padding-left: 3vw;
 }
 
 .localtipo {
@@ -447,6 +444,19 @@ main {
     min-height: calc(100vh - 7vw);
     /*scroll-snap-align: start;*/
 }
+
+.animacaoContactos {
+    display: inline-block;
+    position: relative;
+}
+
+.animacaoContactos > div {
+    position: absolute;
+    width: 0;
+    height: 50px;
+}
+
+/*footer*/
 
 footer {
     min-height: calc(100vh - 7vw);
@@ -554,7 +564,7 @@ footer img {
 
     .showSeccao {
         display: block;
-        width: 100vw;
+        width: 100%;
         text-align: right;
         padding-top: 2vw;
         padding-bottom: 5vw;
@@ -609,37 +619,58 @@ footer img {
     }
 
     /*LOCAIS*/
-    .molduras, .caixa, .cruz {
+
+    .fundo {
+        height: unset;
+    }
+
+    .molduras {
         display: none;
     }
 
-    .fundo2, .deiInfo, .darqInfo, .museuInfo {
-        display: block;
+    .fundo2 {
+        width: 100vw;
         position: relative;
-        top: 0;
-        left: 0;
+        height: unset;
+        display: block;
+        left: unset;
+    }
+
+    .caixa, .cruz {
+        display: none;
     }
 
     .imagemlocal {
         position: relative;
+        top: unset;
         left: 0;
-        display: block;
+        transform: unset;
+    }
+
+    .museuInfo, .darqInfo, .deiInfo {
+        position: relative;
+    }
+
+    .museuInfo div, .darqInfo div, .deiInfo div {
+        width: 100%;
+        position: relative;
+        top: 0;
+        right: unset;
+        margin: 0 0 5vw 3vw;
+    }
+
+    .fundo2 p {
+        display: inline-block;
+        font-size: 1.4vw;
     }
 
     .localtipo {
+        display: block;
         position: relative;
+        font-size: 4vw;
+        top: 0;
         left: 0;
-        top: 0;
-
-    }
-
-    .fundo2 {
-        width: 90vw;
-    }
-
-    .fundo {
-        position: relative;
-        top: 0;
+        margin-left: 3vw;
     }
 
 }
