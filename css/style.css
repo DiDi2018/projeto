@@ -39,8 +39,6 @@ body {
     font-family: 'Poppins', sans-serif;
     background: rgb(250, 250, 250);
     margin: 0;
-    /*-ms-scroll-snap-type: y proximity;
-    scroll-snap-type: y proximity;*/
     overflow: hidden;
 }
 
@@ -456,6 +454,8 @@ main {
 
 .animacaoContactos > div {
     position: absolute;
+    top: 0;
+    right: 0;
     width: 0;
     height: 50px;
 }
