@@ -600,7 +600,9 @@ main {
     }
 
     .pessoaImagem > img {
-        width: 50vw;
+        width:100vw;
+        height:auto;
+        margin:unset;
     }
 
     .pessoaTexto {
@@ -626,6 +628,7 @@ main {
 
     .fundo {
         height: unset;
+        width: unset;
     }
 
     .molduras {
@@ -649,6 +652,11 @@ main {
         top: unset;
         left: 0;
         transform: unset;
+        width:100vw;
+        height:auto;
+        margin:unset;
+        padding: 4vh 0;
+
     }
 
     .museuInfo, .darqInfo, .deiInfo {
@@ -665,17 +673,31 @@ main {
 
     .fundo2 p {
         display: inline-block;
-        font-size: 1.4vw;
+        font-size: 1em;
+        line-height: 2em;
     }
 
     .localtipo {
         display: block;
         position: relative;
-        font-size: 4vw;
+        font-size: 16vw;
+        width: unset;
         top: 0;
         left: 0;
         margin-left: 3vw;
+        line-height: 16vw;
+        padding: 2vh 0;
+
     }
+
+    .icon{
+        height:1em;
+    }
+.animacao{
+    width: 65vw;
+    height: auto;
+
+}
 
 }
 

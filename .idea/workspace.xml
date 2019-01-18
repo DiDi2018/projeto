@@ -15,62 +15,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1717332595">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="7" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.5" value="4" />
-          <entry key="project.opened" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="2725" />
-          <entry key="html" value="1094" />
-          <entry key="js" value="1922" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="2725" />
-          <entry key="HTML" value="1094" />
-          <entry key="JavaScript" value="1922" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="png" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Image" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="projeto" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1825">
-              <caret line="280" lean-forward="true" selection-start-line="280" selection-end-line="280" />
+            <state relative-caret-position="101">
+              <caret line="186" column="42" selection-start-line="186" selection-start-column="21" selection-end-line="186" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="634" lean-forward="true" selection-start-line="634" selection-end-line="634" />
+            <state relative-caret-position="236">
+              <caret line="578" lean-forward="true" selection-start-line="578" selection-end-line="578" />
             </state>
           </provider>
         </entry>
@@ -78,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaScript/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="324" column="23" selection-start-line="324" selection-start-column="18" selection-end-line="324" selection-end-column="23" />
+            <state relative-caret-position="849">
+              <caret line="351" column="21" selection-start-line="351" selection-start-column="21" selection-end-line="351" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
               </folding>
@@ -123,6 +86,9 @@
       <find>vide</find>
       <find>darq</find>
       <find>fundo</find>
+      <find>font-size</find>
+      <find>mc.png</find>
+      <find>pessoaIma</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,21 +107,15 @@
         <option value="$PROJECT_DIR$/JavaScript/package.json" />
         <option value="$PROJECT_DIR$/JavaScript/sketch.js" />
         <option value="$PROJECT_DIR$/JavaScript/main.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="441" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="999" />
     <option name="height" value="802" />
   </component>
   <component name="ProjectView">
@@ -163,13 +123,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="projeto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projeto" type="b2602c69:ProjectViewProjectNode" />
@@ -185,6 +149,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -236,15 +201,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82938000" />
+    <option name="totallyTimeSpent" value="89249000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1440" height="802" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="802" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49794802" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49794802" visible="true" weight="0.19652778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" id="Favorites" order="2" sideWeight="0.502052" side_tool="true" visible="true" weight="0.25" />
+      <window_info active="true" id="Favorites" order="2" sideWeight="0.502052" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -263,9 +228,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/contactos.html" />
@@ -294,25 +256,25 @@
     <entry file="file://$PROJECT_DIR$/images/localdei.png" />
     <entry file="file://$PROJECT_DIR$/JavaScript/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="324" column="23" selection-start-line="324" selection-start-column="18" selection-end-line="324" selection-end-column="23" />
+        <state relative-caret-position="849">
+          <caret line="351" column="21" selection-start-line="351" selection-start-column="21" selection-end-line="351" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1825">
-          <caret line="280" lean-forward="true" selection-start-line="280" selection-end-line="280" />
+        <state relative-caret-position="236">
+          <caret line="578" lean-forward="true" selection-start-line="578" selection-end-line="578" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="634" lean-forward="true" selection-start-line="634" selection-end-line="634" />
+        <state relative-caret-position="101">
+          <caret line="186" column="42" selection-start-line="186" selection-start-column="21" selection-end-line="186" selection-end-column="42" />
         </state>
       </provider>
     </entry>

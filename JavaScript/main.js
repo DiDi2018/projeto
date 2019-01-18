@@ -317,7 +317,7 @@ function sair() {
     museuinfo.style.display = "none";
 }
 
-document.addEventListener("click", function (evt) {
+/*document.addEventListener("click", function (evt) {
     let dentrodarq = darq.contains(evt.target);
     let dentrodei = dei.contains(evt.target);
     let dentromuseu = museu.contains(evt.target);
@@ -326,7 +326,7 @@ document.addEventListener("click", function (evt) {
     if (!dentrodarq && !dentrodei && !dentromuseu && !dentro2) {
         return sair();
     }
-});
+});*/
 
 let localtipo=document.querySelectorAll(".localtipo");
 
