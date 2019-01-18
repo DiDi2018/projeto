@@ -178,11 +178,6 @@ main {
     scroll-snap-align: start;
 }
 
-.divTransition {
-    transition-duration: 1s;
-    transition-property: height;
-}
-
 #edicao2019flex {
     height: calc(100vh - 7vw);
     display: flex;
@@ -197,7 +192,6 @@ main {
 
 #edicao2019flex > div > div:last-child {
     width: calc(100vw / 10 * 2);
-    height: calc(23.75vw + (100vw / 8 * 125 / 250 * 2));
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -231,15 +225,11 @@ main {
     width: calc(100vw / 8 * 2) !important;
 }
 
-.divHover:hover > svg {
-    top: -3.5vw;
-}
-
 .agenda {
     position: absolute;
     opacity: 0;
     left: 25%;
-    bottom: calc(100vw / 10 * 125 / 250 + 4.7vw);
+    bottom: calc(100vw / 10 * 125 / 250 + 2vw);
     transition-duration: 0.5s;
     transition-property: opacity;
     line-height: 3.5vw;

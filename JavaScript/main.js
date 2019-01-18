@@ -1,11 +1,3 @@
-function pageLoading() {
-    let pagina = document.querySelector(".loading");
-    pagina.remove();
-    console.log("loaded");
-}
-
-window.addEventListener("load", pageLoading);
-
 let sobre = document.getElementById("sobreID");
 let edicao = document.getElementById("edicao2019ID");
 let inter = document.getElementById("intervenientesID");
@@ -159,9 +151,9 @@ function abrirTils(x) {
 
     let animForm2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
     animForm2.innerHTML = `<animateTransform href='#esquerdo${x}' attributeName='transform' ` +
-        `attributeType='XML' type='translate' from='0 -300' to='0 0' dur='1s' begin='animData.begin + 0.5s' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
+        `attributeType='XML' type='translate' from='0 -300' to='0 0' dur='1s' begin='animData${x}.begin + 0.5s' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
         `<animateTransform href='#direito${x}' attributeName='transform' attributeType='XML' type='translate' ` +
-        `from='0 300' to='0 0' dur='1s' begin='animData.begin + 0.5s' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
+        `from='0 300' to='0 0' dur='1s' begin='animData${x}.begin + 0.5s' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
 
     let animNum1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
     animNum1.innerHTML = `<animateTransform href='#numero${x}' attributeName='transform' ` +
@@ -173,13 +165,38 @@ function abrirTils(x) {
     let animNum2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
     animNum2.innerHTML = `<animateTransform href='#numero${x}' attributeName='transform' ` +
         `attributeType='XML' type='translate' from='0 -275' to='0 0' dur='1.5s' begin='' repeatCount='1' ` +
-        `fill='freeze' calcMode='spline' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-100 -275; 0 -275; 0 0' id='animData'></animateTransform>` +
+        `fill='freeze' calcMode='spline' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-100 -275; 0 -275; 0 0' id='animData${x}'></animateTransform>` +
         `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' from='0 -160' to='0 0' dur='1.5s' ` +
         `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-100 -160; 0 -160; 0 0'></animateTransform>`;
 
 
-    if (arrayDeDivTils[x].classList.contains("divTransition")) {
-        arrayDeDivTils[x].classList.toggle("divTransition");
+    if (arrayDeDivTils[x].classList.contains("divHover")) {
+        arrayDeDivTils[x].classList.toggle("divHover");
+        window.setTimeout(function () {
+            divsAgenda[x].style.opacity = 1;
+        }, 750);
+
+        //animacao svg
+
+        if(child.length > 0){
+            for(let i=0;i<child.length;i++){
+                arraySvg[x].removeChild(child[i]);
+            }
+        }
+        let text1 = animForm1.childNodes[0];
+        let text2 = animForm1.childNodes[1];
+        let textData1 = animNum1.childNodes[0];
+        let textData2 = animNum1.childNodes[1];
+        arraySvg[x].appendChild(text1);
+        arraySvg[x].appendChild(text2);
+        arraySvg[x].appendChild(textData1);
+        arraySvg[x].appendChild(textData2);
+        text1.beginElement();
+        text2.beginElement();
+        textData1.beginElement();
+        textData2.beginElement();
+    }
+    else {
         divsAgenda[x].style.opacity = 0;
         window.setTimeout(function () {
             arrayDeDivTils[x].classList.toggle("divHover");
@@ -205,34 +222,6 @@ function abrirTils(x) {
         arraySvg[x].appendChild(text2);
         arraySvg[x].appendChild(textData1);
         arraySvg[x].appendChild(textData2);
-        textData1.beginElement();
-        textData2.beginElement();
-    }
-    else {
-        arrayDeDivTils[x].classList.toggle("divHover");
-
-        window.setTimeout(function () {
-            arrayDeDivTils[x].classList.toggle("divTransition");
-            divsAgenda[x].style.opacity = 1;
-        }, 500);
-
-        //animacao svg
-
-        if(child.length > 0){
-            for(let i=0;i<child.length;i++){
-                arraySvg[x].removeChild(child[i]);
-            }
-        }
-        let text1 = animForm1.childNodes[0];
-        let text2 = animForm1.childNodes[1];
-        let textData1 = animNum1.childNodes[0];
-        let textData2 = animNum1.childNodes[1];
-        arraySvg[x].appendChild(text1);
-        arraySvg[x].appendChild(text2);
-        arraySvg[x].appendChild(textData1);
-        arraySvg[x].appendChild(textData2);
-        text1.beginElement();
-        text2.beginElement();
         textData1.beginElement();
         textData2.beginElement();
     }
