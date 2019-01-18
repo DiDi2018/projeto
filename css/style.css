@@ -577,6 +577,21 @@ main {
         line-height: 5vw;
     }
 
+    /*sobre*/
+    #sobre{
+        justify-content:unset;
+    }
+
+    #sobre > .texto{
+        width: unset;
+    }
+
+    #sobre > .titulos{
+        padding: 4vh 0;
+    }
+
+
+
     /*edicao 2019*/
     #edicao2019flex {
         height: calc(100vh - 19vw);
