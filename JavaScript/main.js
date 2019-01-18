@@ -129,90 +129,113 @@ contactos.addEventListener('click', function () {
 
 /*clicar nos tils da secção edição 2019*/
 
-let arrayDeDivTils = document.querySelectorAll("#edicao2019flex > div > div:nth-child(4)");
+let arrayDeDivTils = document.querySelectorAll("#edicao2019flex > div > div:last-child");
+console.log(arrayDeDivTils);
 let divsAgenda = document.querySelectorAll(".agenda");
-let textoData = document.querySelectorAll("#edicao2019flex > div > p");
+let arraySvg = document.querySelectorAll("#edicao2019flex > div > div:last-child > svg");
+console.log(arraySvg);
 
 arrayDeDivTils[0].addEventListener("click", function () {
-    abrirTils(0, 0, 1);
+    abrirTils(0);
 });
 arrayDeDivTils[1].addEventListener("click", function () {
-    abrirTils(1, 2, 3);
+    abrirTils(1);
 });
 arrayDeDivTils[2].addEventListener("click", function () {
-    abrirTils(2, 4, 5);
+    abrirTils(2);
 });
 
-function abrirTils(x, y, z) {
+function abrirTils(x) {
+    let x1 = x + 1;
+    let child = document.querySelectorAll(`#edicao2019flex > div:nth-child(${x1}) svg > animateTransform`);
+    let div = document.querySelectorAll(`#edicao2019flex > div:nth-child(${x1})`);
+    console.log(child);
+    console.log(div);
+    let animForm1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    animForm1.innerHTML = `<animateTransform attributeName='transform' href='#esquerdo${x}' ` +
+        `attributeType='XML' type='translate' to='0 -300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
+        `<animateTransform href='#direito${x}' attributeName='transform' attributeType='XML' type='translate' ` +
+        `to='0 300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
+
+    let animForm2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    animForm2.innerHTML = `<animateTransform href='#esquerdo${x}' attributeName='transform' ` +
+        `attributeType='XML' type='translate' from='0 -300' to='0 0' dur='1s' begin='animData.begin + 0.5s' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
+        `<animateTransform href='#direito${x}' attributeName='transform' attributeType='XML' type='translate' ` +
+        `from='0 300' to='0 0' dur='1s' begin='animData.begin + 0.5s' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
+
+    let animNum1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    animNum1.innerHTML = `<animateTransform href='#numero${x}' attributeName='transform' ` +
+        `attributeType='XML' type='translate' to='-100 -275' dur='1.5s' begin='' repeatCount='1' ` +
+        `fill='freeze' calcMode='spline' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -275; -100 -275'></animateTransform>` +
+        `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' to='-100 -160' dur='1.5s' ` +
+        `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -160; -100 -160'></animateTransform>`;
+
+    let animNum2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    animNum2.innerHTML = `<animateTransform href='#numero${x}' attributeName='transform' ` +
+        `attributeType='XML' type='translate' from='0 -275' to='0 0' dur='1.5s' begin='' repeatCount='1' ` +
+        `fill='freeze' calcMode='spline' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-100 -275; 0 -275; 0 0' id='animData'></animateTransform>` +
+        `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' from='0 -160' to='0 0' dur='1.5s' ` +
+        `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-100 -160; 0 -160; 0 0'></animateTransform>`;
+
+
     if (arrayDeDivTils[x].classList.contains("divTransition")) {
+        arrayDeDivTils[x].classList.toggle("divTransition");
         divsAgenda[x].style.opacity = 0;
         window.setTimeout(function () {
-            textoData[y].style.removeProperty('bottom');
-            textoData[z].style.bottom = 'calc(100vw / 10 * 125 / 250 + (100vw / 10 * 125 / 250 - 4vw))';
-            arrayDeDivTils[x].classList.toggle("divAltura");
-        }, 250);
-        window.setTimeout(function () {
-            arrayDeDivTils[x].classList.toggle("divTransition");
             arrayDeDivTils[x].classList.toggle("divHover");
-            textoData[z].style.removeProperty('bottom');
-        }, 1250);
+        }, 1500);
+
+        //animacao svg
+
+        if(child.length > 0){
+            window.setTimeout(function(){
+                for(let i=0;i<child.length-2;i++){
+                    arraySvg[x].removeChild(child[i]);
+                }
+            },500);
+            for(let i=2;i<child.length;i++){
+                arraySvg[x].removeChild(child[i]);
+            }
+        }
+        let text1 = animForm2.childNodes[0];
+        let text2 = animForm2.childNodes[1];
+        let textData1 = animNum2.childNodes[0];
+        let textData2 = animNum2.childNodes[1];
+        arraySvg[x].appendChild(text1);
+        arraySvg[x].appendChild(text2);
+        arraySvg[x].appendChild(textData1);
+        arraySvg[x].appendChild(textData2);
+        textData1.beginElement();
+        textData2.beginElement();
     }
     else {
-        textoData[z].style.bottom = 'calc(100vw / 8 * 125 / 250 + (100vw / 8 * 125 / 250 - 5vw))';
+        arrayDeDivTils[x].classList.toggle("divHover");
+
         window.setTimeout(function () {
-            textoData[y].style.bottom = 'calc((23.75vw + (100vw / 8 * 125 / 250 * 2)) - (100vw / 8 * 125 / 250) - 1.75vw - 4vw)';
-            textoData[z].style.bottom = 'calc((23.75vw + (100vw / 8 * 125 / 250 * 2)) - (100vw / 8 * 125 / 250) - 1.75vw - 4vw)';
-            arrayDeDivTils[x].classList.toggle("divAltura");
             arrayDeDivTils[x].classList.toggle("divTransition");
-            arrayDeDivTils[x].classList.toggle("divHover");
-        }, 1);
-        window.setTimeout(function () {
             divsAgenda[x].style.opacity = 1;
-        }, 501);
+        }, 500);
+
+        //animacao svg
+
+        if(child.length > 0){
+            for(let i=0;i<child.length;i++){
+                arraySvg[x].removeChild(child[i]);
+            }
+        }
+        let text1 = animForm1.childNodes[0];
+        let text2 = animForm1.childNodes[1];
+        let textData1 = animNum1.childNodes[0];
+        let textData2 = animNum1.childNodes[1];
+        arraySvg[x].appendChild(text1);
+        arraySvg[x].appendChild(text2);
+        arraySvg[x].appendChild(textData1);
+        arraySvg[x].appendChild(textData2);
+        text1.beginElement();
+        text2.beginElement();
+        textData1.beginElement();
+        textData2.beginElement();
     }
-}
-
-//texto a aumentar quando é feito hover no sobre
-
-arrayDeDivTils[0].addEventListener('mousemove', function () {
-    data(0, 0, 1);
-});
-arrayDeDivTils[0].addEventListener('mouseleave', function () {
-    data2(0, 1);
-});
-arrayDeDivTils[1].addEventListener('mousemove', function () {
-    data(1, 2, 3);
-});
-arrayDeDivTils[1].addEventListener('mouseleave', function () {
-    data2(2, 3);
-});
-arrayDeDivTils[2].addEventListener('mousemove', function () {
-    data(2, 4, 5);
-});
-arrayDeDivTils[2].addEventListener('mouseleave', function () {
-    data2(4, 5);
-});
-
-function data(x, y, z) {
-    if (arrayDeDivTils[x].classList.contains("divHover")) {
-        textoData[y].style.fontSize = '5vw';
-        textoData[y].style.lineHeight = '5vw';
-        textoData[z].style.fontSize = '5vw';
-        textoData[z].style.lineHeight = '5vw';
-    }
-    else {
-        textoData[y].style.fontSize = '4vw';
-        textoData[y].style.lineHeight = '4vw';
-        textoData[z].style.fontSize = '4vw';
-        textoData[z].style.lineHeight = '4vw';
-    }
-}
-
-function data2(x, y) {
-    textoData[x].style.fontSize = '4vw';
-    textoData[x].style.lineHeight = '4vw';
-    textoData[y].style.fontSize = '4vw';
-    textoData[y].style.lineHeight = '4vw';
 }
 
 //texto na classe agenda

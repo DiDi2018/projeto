@@ -178,10 +178,6 @@ main {
     scroll-snap-align: start;
 }
 
-.divAltura {
-    height: calc(23.75vw + (100vw / 8 * 125 / 250 * 2)) !important;
-}
-
 .divTransition {
     transition-duration: 1s;
     transition-property: height;
@@ -201,7 +197,7 @@ main {
 
 #edicao2019flex > div > div:last-child {
     width: calc(100vw / 10 * 2);
-    height: calc(100vw / 10 * 125 / 250 * 2);
+    height: calc(23.75vw + (100vw / 8 * 125 / 250 * 2));
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -226,32 +222,27 @@ main {
 }
 
 #edicao2019flex > div > div:last-child > svg {
-    width: calc(100vw / 10);
+    width: 100%;
     height: auto;
     position: relative;
 }
 
-#edicao2019flex > div > div:last-child > svg:last-child {
-    position: absolute;
-    bottom: 0;
-}
-
 .divHover:hover {
     width: calc(100vw / 8 * 2) !important;
-    height: calc(100vw / 8 * 125 / 250 * 2) !important;
 }
 
 .divHover:hover > svg {
-    width: calc(100vw / 8) !important;
+    top: -3.5vw;
 }
 
 .agenda {
     position: absolute;
     opacity: 0;
     left: 25%;
-    bottom: calc(100vw / 10 * 125 / 250 + 2.5vw);
+    bottom: calc(100vw / 10 * 125 / 250 + 4.7vw);
     transition-duration: 0.5s;
     transition-property: opacity;
+    line-height: 3.5vw;
 }
 
 .agenda > span {
