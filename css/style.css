@@ -609,15 +609,14 @@ main {
 
     .pessoaImagem {
         order: 2;
-        width: 100vw;
+        width: 100%;
         text-align: left;
-        margin-left: 2vw;
     }
 
     .pessoaImagem > img {
-        width:100vw;
-        height:auto;
-        margin:unset;
+        width: 100%;
+        height: auto;
+        margin: unset;
     }
 
     .pessoaTexto {
@@ -667,11 +666,10 @@ main {
         top: unset;
         left: 0;
         transform: unset;
-        width:100vw;
-        height:auto;
-        margin:unset;
+        width: 100%;
+        height: auto;
+        margin: unset;
         padding: 4vh 0;
-
     }
 
     .museuInfo, .darqInfo, .deiInfo {
@@ -679,7 +677,7 @@ main {
     }
 
     .museuInfo div, .darqInfo div, .deiInfo div {
-        width: 100%;
+        width: calc(100% - 3vw);
         position: relative;
         top: 0;
         right: unset;
