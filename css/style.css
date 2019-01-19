@@ -52,17 +52,13 @@ header {
 
 header > a {
     display: inline-block;
-    height: 7vw;
-    padding-left: 1%;
+    height: 4vw;
+    padding: 1.5vw 0 0 1%;
 }
 
 header > a > img {
     height: 4vw;
     width: auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-
 }
 
 header > nav > img {
@@ -570,10 +566,6 @@ main {
 @media (max-width: 768px) {
 
     /*header */
-    nav {
-        display: flex;
-        align-items: center;
-    }
 
     header > nav > ul {
         width: 100%;
@@ -581,19 +573,18 @@ main {
         transition-property: opacity;
         visibility: hidden;
         top: 7vw;
-        font-size: 7vw;
         height: calc(100vh - 7vw);
         background-color: rgb(250, 250, 250);
-        display: block;
+        flex-direction: column;
+        justify-content: center;
     }
 
     header > nav > ul > li {
         width: 30%;
         text-align: left;
-        margin: auto;
-        display: block;
         font-size: 5vw;
         line-height: 16vw;
+        flex: unset !important;
     }
 
     header > nav > img {
