@@ -71,6 +71,16 @@ function headerScroll(){
             }
         }
     }
+
+    /*contactos animações*/
+    let contactosAnimacao = document.querySelectorAll(".animacaoContactos > div");
+    let animPos = contactosAnimacao[0].getBoundingClientRect();
+    if (animPos.top <= window.innerHeight/4*3 && animPos.top >=window.innerWidth*0.06){
+        for(let i=0; i<contactosAnimacao.length; i++){
+            contactosAnimacao[i].style.animationName = "animacao";
+        }
+    }
+
     /*animação final*/
 
     let animacao = document.querySelector(".animacao");
@@ -86,95 +96,285 @@ headerScroll();
 /*atualizar quando é feito scroll*/
 document.querySelector('main').addEventListener('scroll', headerScroll);
 
+/*menu no mobile*/
+
+let imagemMenu = document.querySelector("nav > img");
+
+function menuMobile() {
+    let lista = document.querySelector("nav > ul");
+
+    if (lista.classList.contains("show")) {
+        lista.setAttribute("style", "opacity: 0");
+        window.setTimeout(function () {
+            lista.classList.toggle("show");
+        }, 1000)
+    } else {
+        lista.setAttribute("style", "opacity: 1");
+        lista.classList.toggle("show");
+    }
+}
+
+imagemMenu.addEventListener("click", menuMobile);
 
 /*clicar na barra de navegação*/
+
+let lista = document.querySelector("nav > ul");
 
 let sobreDiv = document.getElementById("sobre");
 sobre.addEventListener('click', function () {
     sobreDiv.scrollIntoView();
-    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
+    if (lista.classList.contains("show")) {
+        lista.classList.remove("show");
+    }
 });
 
 let edicaoDiv = document.getElementById("edicao2019");
 edicao.addEventListener('click', function () {
     edicaoDiv.scrollIntoView();
-    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
+    if (lista.classList.contains("show")) {
+        lista.classList.remove("show");
+    }
 });
 
 let interDiv = document.getElementById("intervenientes");
 inter.addEventListener('click', function () {
     interDiv.scrollIntoView();
-    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
+    if (lista.classList.contains("show")) {
+        lista.classList.remove("show");
+    }
 });
 
 let locaisDiv = document.getElementById("locais");
 locais.addEventListener('click', function () {
     locaisDiv.scrollIntoView();
-    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
+    if (lista.classList.contains("show")) {
+        lista.classList.remove("show");
+    }
 });
 
 let contactosDiv = document.getElementById("contactos");
 contactos.addEventListener('click', function () {
     contactosDiv.scrollIntoView();
-    /*window.scrollBy(0, -window.innerWidth * 0.07);*/
+    if (lista.classList.contains("show")) {
+        lista.classList.remove("show");
+    }
 });
 
-/*clicar nos tils da secção edição 2019*/
+/*ANIMAÇÃO DOS TILS DA EDIÇÃO 2019*/
 
 let arrayDeDivTils = document.querySelectorAll("#edicao2019flex > div > div:last-child");
-console.log(arrayDeDivTils);
 let divsAgenda = document.querySelectorAll(".agenda");
 let arraySvg = document.querySelectorAll("#edicao2019flex > div > div:last-child > svg");
-console.log(arraySvg);
 
-arrayDeDivTils[0].addEventListener("click", function () {
+//elementos das animações
+let animForm1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+let animForm2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+let animNum1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+let animNum2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+
+let telemovel = window.matchMedia('(max-width: 1024px').matches;
+let dispositivo = telemovel;
+
+if(telemovel === false){  //se for desktop adiciona o eventlistener
+    clickAbrirTils();
+}
+else {  //se for telemovel ou tablet retira o .divHover e abre os tils
+    for(let i=0; i<arrayDeDivTils.length; i++) {
+        arrayDeDivTils[i].classList.remove("divHover");
+        divsAgenda[i].style.opacity = 0;
+    }
+
+    for(let i=0; i<arraySvg.length; i++){
+        animForm1.innerHTML = `<animateTransform attributeName='transform' href='#esquerdo${i}' ` +
+            `attributeType='XML' type='translate' to='0 -300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
+            `<animateTransform href='#direito${i}' attributeName='transform' attributeType='XML' type='translate' ` +
+            `to='0 300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
+
+        animNum1.innerHTML = `<animateTransform href='#numero${i}' attributeName='transform' ` +
+            `attributeType='XML' type='translate' to='-150 -275' dur='1.5s' begin='' repeatCount='1' ` +
+            `fill='freeze' calcMode='spline' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -275; -150 -275'></animateTransform>` +
+            `<animateTransform href='#mes${i}' attributeName='transform' attributeType='XML' type='translate' to='-150 -160' dur='1.5s' ` +
+            `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -160; -150 -160'></animateTransform>`;
+
+        window.setTimeout(function () {
+            divsAgenda[i].style.opacity = 1;
+        }, 750);
+
+        arraySvg[i].setAttribute("viewBox","0 0 515 850");
+        arraySvg[i].style.top = "calc(-100vw / 10 * 125 / 250 - 11.65vw)";
+
+        let text1 = animForm1.childNodes[0];
+        let text2 = animForm1.childNodes[1];
+        let textData1 = animNum1.childNodes[0];
+        let textData2 = animNum1.childNodes[1];
+        arraySvg[i].appendChild(text1);
+        arraySvg[i].appendChild(text2);
+        arraySvg[i].appendChild(textData1);
+        arraySvg[i].appendChild(textData2);
+        text1.beginElement();
+        text2.beginElement();
+        textData1.beginElement();
+        textData2.beginElement();
+    }
+}
+
+//funções para o eventListener de clicar para abrir os tils
+function abrirTil0(){
     abrirTils(0);
-});
-arrayDeDivTils[1].addEventListener("click", function () {
+}
+function abrirTil1(){
     abrirTils(1);
-});
-arrayDeDivTils[2].addEventListener("click", function () {
+}
+function abrirTil2(){
     abrirTils(2);
+}
+
+window.addEventListener('resize', function(){
+    telemovel = window.matchMedia('(max-width: 1024px').matches;
+    if(telemovel){
+        if(telemovel !== dispositivo){
+            dispositivo = telemovel;
+            //remover o eventListener de clicar no til
+            arrayDeDivTils[0].removeEventListener("click", abrirTil0);
+            arrayDeDivTils[1].removeEventListener("click", abrirTil1);
+            arrayDeDivTils[2].removeEventListener("click", abrirTil2);
+
+            //fechar os tils
+            let child1 = document.querySelectorAll('#edicao2019flex > div:nth-child(1) svg > animateTransform');
+            if (child1.length > 0){
+                for(let i = 0; i < child1.length; i++){
+                    arraySvg[0].removeChild(child1[i]);
+                }
+            }
+            let child2 = document.querySelectorAll('#edicao2019flex > div:nth-child(2) svg > animateTransform');
+            if (child2.length > 0){
+                for(let i = 0; i < child2.length; i++){
+                    arraySvg[1].removeChild(child2[i]);
+                }
+            }
+            let child3 = document.querySelectorAll('#edicao2019flex > div:nth-child(3) svg > animateTransform');
+            if (child3.length > 0){
+                for(let i = 0; i < child3.length; i++){
+                    arraySvg[2].removeChild(child3[i]);
+                }
+            }
+
+            for(let i=0; i<arrayDeDivTils.length; i++) {
+                arrayDeDivTils[i].classList.remove("divHover");
+                divsAgenda[i].style.opacity = 0;
+            }
+
+            //adicionar animação para os abrir
+            for(let i=0; i<arraySvg.length; i++){
+                animForm1.innerHTML = `<animateTransform attributeName='transform' href='#esquerdo${i}' ` +
+                    `attributeType='XML' type='translate' to='0 -300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
+                    `<animateTransform href='#direito${i}' attributeName='transform' attributeType='XML' type='translate' ` +
+                    `to='0 300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
+
+                animNum1.innerHTML = `<animateTransform href='#numero${i}' attributeName='transform' ` +
+                    `attributeType='XML' type='translate' to='-150 -275' dur='1.5s' begin='' repeatCount='1' ` +
+                    `fill='freeze' calcMode='spline' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -275; -150 -275'></animateTransform>` +
+                    `<animateTransform href='#mes${i}' attributeName='transform' attributeType='XML' type='translate' to='-150 -160' dur='1.5s' ` +
+                    `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -160; -150 -160'></animateTransform>`;
+
+                window.setTimeout(function () {
+                    divsAgenda[i].style.opacity = 1;
+                }, 750);
+
+                arraySvg[i].setAttribute("viewBox","0 0 515 850");
+                arraySvg[i].style.top = "calc(-100vw / 10 * 125 / 250 - 11.65vw)";
+
+                let text1 = animForm1.childNodes[0];
+                let text2 = animForm1.childNodes[1];
+                let textData1 = animNum1.childNodes[0];
+                let textData2 = animNum1.childNodes[1];
+                arraySvg[i].appendChild(text1);
+                arraySvg[i].appendChild(text2);
+                arraySvg[i].appendChild(textData1);
+                arraySvg[i].appendChild(textData2);
+                text1.beginElement();
+                text2.beginElement();
+                textData1.beginElement();
+                textData2.beginElement();
+            }
+
+        }
+    }
+    else {
+        if(telemovel !== dispositivo){
+            dispositivo = telemovel;
+            for(let i=0; i<arrayDeDivTils.length; i++) {
+                arrayDeDivTils[i].classList.add("divHover");
+                divsAgenda[i].style.opacity = 0;
+                //fechar os tils
+                let child1 = document.querySelectorAll('#edicao2019flex > div:nth-child(1) svg > animateTransform');
+                if (child1.length > 0){
+                    for(let i = 0; i < child1.length; i++){
+                        arraySvg[0].removeChild(child1[i]);
+                    }
+                }
+                let child2 = document.querySelectorAll('#edicao2019flex > div:nth-child(2) svg > animateTransform');
+                if (child2.length > 0){
+                    for(let i = 0; i < child2.length; i++){
+                        arraySvg[1].removeChild(child2[i]);
+                    }
+                }
+                let child3 = document.querySelectorAll('#edicao2019flex > div:nth-child(3) svg > animateTransform');
+                if (child3.length > 0){
+                    for(let i = 0; i < child3.length; i++){
+                        arraySvg[2].removeChild(child3[i]);
+                    }
+                }
+
+                arrayDeDivTils[i].classList.add("divHover");
+                divsAgenda[i].style.opacity = 0;
+                arraySvg[i].setAttribute("viewBox","0 300 515 250");
+                arraySvg[i].style.top = "calc(-100vw / 10 * 125 / 250)";
+            }
+            clickAbrirTils();
+        }
+    }
 });
+
+function clickAbrirTils(){
+    arrayDeDivTils[0].addEventListener("click", abrirTil0);
+    arrayDeDivTils[1].addEventListener("click", abrirTil1);
+    arrayDeDivTils[2].addEventListener("click", abrirTil2);
+}
 
 function abrirTils(x) {
     let x1 = x + 1;
     let child = document.querySelectorAll(`#edicao2019flex > div:nth-child(${x1}) svg > animateTransform`);
-    let div = document.querySelectorAll(`#edicao2019flex > div:nth-child(${x1})`);
-    console.log(child);
-    console.log(div);
-    let animForm1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
+
     animForm1.innerHTML = `<animateTransform attributeName='transform' href='#esquerdo${x}' ` +
         `attributeType='XML' type='translate' to='0 -300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
         `<animateTransform href='#direito${x}' attributeName='transform' attributeType='XML' type='translate' ` +
         `to='0 300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
 
-    let animForm2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
     animForm2.innerHTML = `<animateTransform href='#esquerdo${x}' attributeName='transform' ` +
-        `attributeType='XML' type='translate' from='0 -300' to='0 0' dur='1s' begin='animData${x}.begin + 0.5s' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
+        `attributeType='XML' type='translate' from='0 -300' to='0 0' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
         `<animateTransform href='#direito${x}' attributeName='transform' attributeType='XML' type='translate' ` +
-        `from='0 300' to='0 0' dur='1s' begin='animData${x}.begin + 0.5s' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
+        `from='0 300' to='0 0' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
 
-    let animNum1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
     animNum1.innerHTML = `<animateTransform href='#numero${x}' attributeName='transform' ` +
-        `attributeType='XML' type='translate' to='-100 -275' dur='1.5s' begin='' repeatCount='1' ` +
-        `fill='freeze' calcMode='spline' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -275; -100 -275'></animateTransform>` +
-        `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' to='-100 -160' dur='1.5s' ` +
-        `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -160; -100 -160'></animateTransform>`;
+        `attributeType='XML' type='translate' to='-150 -275' dur='1.5s' begin='' repeatCount='1' ` +
+        `fill='freeze' calcMode='spline' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -275; -150 -275'></animateTransform>` +
+        `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' to='-150 -160' dur='1.5s' ` +
+        `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -160; -150 -160'></animateTransform>`;
 
-    let animNum2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
     animNum2.innerHTML = `<animateTransform href='#numero${x}' attributeName='transform' ` +
-        `attributeType='XML' type='translate' from='0 -275' to='0 0' dur='1.5s' begin='' repeatCount='1' ` +
-        `fill='freeze' calcMode='spline' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-100 -275; 0 -275; 0 0' id='animData${x}'></animateTransform>` +
-        `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' from='0 -160' to='0 0' dur='1.5s' ` +
-        `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-100 -160; 0 -160; 0 0'></animateTransform>`;
+        `attributeType='XML' type='translate' from='-150 -275' to='0 0' dur='1.5s' begin='' repeatCount='1' ` +
+        `fill='freeze' calcMode='spline' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-150 -275; 0 -275; 0 0'></animateTransform>` +
+        `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' from='-150 -160' to='0 0' dur='1.5s' ` +
+        `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-150 -160; 0 -160; 0 0'></animateTransform>`;
 
 
     if (arrayDeDivTils[x].classList.contains("divHover")) {
+
         arrayDeDivTils[x].classList.toggle("divHover");
         window.setTimeout(function () {
             divsAgenda[x].style.opacity = 1;
-        }, 750);
+            }, 750);
 
         //animacao svg
 
@@ -183,6 +383,9 @@ function abrirTils(x) {
                 arraySvg[x].removeChild(child[i]);
             }
         }
+        arraySvg[x].setAttribute("viewBox","0 0 515 850");
+        arraySvg[x].style.top = "calc(-100vw / 10 * 125 / 250 - 11.65vw)";
+
         let text1 = animForm1.childNodes[0];
         let text2 = animForm1.childNodes[1];
         let textData1 = animNum1.childNodes[0];
@@ -198,33 +401,38 @@ function abrirTils(x) {
     }
     else {
         divsAgenda[x].style.opacity = 0;
+
         window.setTimeout(function () {
             arrayDeDivTils[x].classList.toggle("divHover");
-        }, 1500);
+            arraySvg[x].setAttribute("viewBox","0 300 515 250");
+            arraySvg[x].style.top = "calc(-100vw / 10 * 125 / 250)";
+            }, 1500);
 
         //animacao svg
 
-        if(child.length > 0){
-            window.setTimeout(function(){
-                for(let i=0;i<child.length-2;i++){
-                    arraySvg[x].removeChild(child[i]);
-                }
-            },500);
-            for(let i=2;i<child.length;i++){
-                arraySvg[x].removeChild(child[i]);
-            }
-        }
         let text1 = animForm2.childNodes[0];
         let text2 = animForm2.childNodes[1];
         let textData1 = animNum2.childNodes[0];
         let textData2 = animNum2.childNodes[1];
-        arraySvg[x].appendChild(text1);
-        arraySvg[x].appendChild(text2);
+
+        window.setTimeout(function(){
+            for(let i=0;i<child.length-2;i++){
+                arraySvg[x].removeChild(child[i]);
+                arraySvg[x].appendChild(text1);
+                arraySvg[x].appendChild(text2);
+                text1.beginElement();
+                text2.beginElement();
+            }
+            },500);
+        for(let i=2;i<child.length;i++){
+            arraySvg[x].removeChild(child[i]);
+        }
         arraySvg[x].appendChild(textData1);
         arraySvg[x].appendChild(textData2);
         textData1.beginElement();
         textData2.beginElement();
     }
+
 }
 
 //texto na classe agenda
@@ -340,7 +548,7 @@ function sair() {
     }
 });*/
 
-let localtipo=document.querySelectorAll(".localtipo");
+let localtipo = document.querySelectorAll(".localtipo");
 
 function titulolocal(string, x) {
     let array = '';
@@ -365,5 +573,29 @@ titulolocal('museu da ciência', 0);
 titulolocal('darq', 1);
 titulolocal('dei', 2);
 
+/*CONTACTOS*/
 
+let contactosAnim = document.querySelectorAll(".animacaoContactos > p");
 
+function nomeContacto(string,x){
+    let array = '';
+    for (let i = 0; i < string.length; i++) {
+        if (string.charAt(i) === ' ') {
+            array += '<span class="circulos"> </span>';
+        }
+        else {
+            let r = Math.floor(Math.random() * (3));
+            if (r === 1) {
+                array += '<span class="triangulos">' + string.charAt(i) + '</span>';
+            } else if (r === 2) {
+                array += '<span class="circulos">' + string.charAt(i) + '</span>';
+            } else {
+                array += '<span class="quadrados">' + string.charAt(i) + '</span>';
+            }
+        }
+    }
+    contactosAnim[x].insertAdjacentHTML('afterbegin', array);
+}
+
+nomeContacto('nuno coelho',0);
+nomeContacto('pedro martins',1);
