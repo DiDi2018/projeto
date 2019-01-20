@@ -99,26 +99,31 @@ document.querySelector('main').addEventListener('scroll', headerScroll);
 /*menu no mobile*/
 
 let imagemMenu = document.querySelector("nav > img");
+let lista = document.querySelector("nav > ul");
 
 function menuMobile() {
-    let lista = document.querySelector("nav > ul");
-
     if (lista.classList.contains("show")) {
-        lista.setAttribute("style", "opacity: 0");
+        lista.removeAttribute("style");
         window.setTimeout(function () {
             lista.classList.toggle("show");
         }, 1000)
-    } else {
-        lista.setAttribute("style", "opacity: 1");
+    }
+    else {
         lista.classList.toggle("show");
+        lista.style.opacity = "1";
     }
 }
 
 imagemMenu.addEventListener("click", menuMobile);
 
-/*clicar na barra de navegação*/
+window.addEventListener('resize', function(){
+    if(window.matchMedia('(min-width: 769px').matches){
+        lista.removeAttribute("style");
+        lista.classList.remove("show");
+    }
+});
 
-let lista = document.querySelector("nav > ul");
+/*clicar na barra de navegação*/
 
 let sobreDiv = document.getElementById("sobre");
 sobre.addEventListener('click', function () {
@@ -172,164 +177,57 @@ let animForm2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
 let animNum1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
 let animNum2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
 
-let telemovel = window.matchMedia('(max-width: 1024px').matches;
-let dispositivo = telemovel;
+let fechado = [true, true, true];
 
-if(telemovel === false){  //se for desktop adiciona o eventlistener
+let tablet = window.matchMedia('(max-width: 1024px').matches;
+let dispositivo = tablet;
+
+if(tablet === false){  //se for desktop adiciona o eventlistener
     clickAbrirTils();
 }
 else {  //se for telemovel ou tablet retira o .divHover e abre os tils
-    for(let i=0; i<arrayDeDivTils.length; i++) {
-        arrayDeDivTils[i].classList.remove("divHover");
-        divsAgenda[i].style.opacity = 0;
-    }
-
     for(let i=0; i<arraySvg.length; i++){
-        animForm1.innerHTML = `<animateTransform attributeName='transform' href='#esquerdo${i}' ` +
-            `attributeType='XML' type='translate' to='0 -300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
-            `<animateTransform href='#direito${i}' attributeName='transform' attributeType='XML' type='translate' ` +
-            `to='0 300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
-
-        animNum1.innerHTML = `<animateTransform href='#numero${i}' attributeName='transform' ` +
-            `attributeType='XML' type='translate' to='-150 -275' dur='1.5s' begin='' repeatCount='1' ` +
-            `fill='freeze' calcMode='spline' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -275; -150 -275'></animateTransform>` +
-            `<animateTransform href='#mes${i}' attributeName='transform' attributeType='XML' type='translate' to='-150 -160' dur='1.5s' ` +
-            `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -160; -150 -160'></animateTransform>`;
-
-        window.setTimeout(function () {
-            divsAgenda[i].style.opacity = 1;
-        }, 750);
-
-        arraySvg[i].setAttribute("viewBox","0 0 515 850");
-        arraySvg[i].style.top = "calc(-100vw / 10 * 125 / 250 - 11.65vw)";
-
-        let text1 = animForm1.childNodes[0];
-        let text2 = animForm1.childNodes[1];
-        let textData1 = animNum1.childNodes[0];
-        let textData2 = animNum1.childNodes[1];
-        arraySvg[i].appendChild(text1);
-        arraySvg[i].appendChild(text2);
-        arraySvg[i].appendChild(textData1);
-        arraySvg[i].appendChild(textData2);
-        text1.beginElement();
-        text2.beginElement();
-        textData1.beginElement();
-        textData2.beginElement();
+        abrirTil(i);
     }
 }
 
-//funções para o eventListener de clicar para abrir os tils
+//funções para o eventListener de clicar para abrir e fechar os tils
 function abrirTil0(){
-    abrirTils(0);
+    animacaoTils(0);
 }
 function abrirTil1(){
-    abrirTils(1);
+    animacaoTils(1);
 }
 function abrirTil2(){
-    abrirTils(2);
+    animacaoTils(2);
 }
 
 window.addEventListener('resize', function(){
-    telemovel = window.matchMedia('(max-width: 1024px').matches;
-    if(telemovel){
-        if(telemovel !== dispositivo){
-            dispositivo = telemovel;
+    tablet = window.matchMedia('(max-width: 1024px').matches;
+    if(tablet){
+        if(tablet !== dispositivo){
+            //se houve mudança de dispositivo de desktop para tablet
+            dispositivo = tablet;
+
             //remover o eventListener de clicar no til
             arrayDeDivTils[0].removeEventListener("click", abrirTil0);
             arrayDeDivTils[1].removeEventListener("click", abrirTil1);
             arrayDeDivTils[2].removeEventListener("click", abrirTil2);
 
-            //fechar os tils
-            let child1 = document.querySelectorAll('#edicao2019flex > div:nth-child(1) svg > animateTransform');
-            if (child1.length > 0){
-                for(let i = 0; i < child1.length; i++){
-                    arraySvg[0].removeChild(child1[i]);
-                }
-            }
-            let child2 = document.querySelectorAll('#edicao2019flex > div:nth-child(2) svg > animateTransform');
-            if (child2.length > 0){
-                for(let i = 0; i < child2.length; i++){
-                    arraySvg[1].removeChild(child2[i]);
-                }
-            }
-            let child3 = document.querySelectorAll('#edicao2019flex > div:nth-child(3) svg > animateTransform');
-            if (child3.length > 0){
-                for(let i = 0; i < child3.length; i++){
-                    arraySvg[2].removeChild(child3[i]);
-                }
-            }
-
-            for(let i=0; i<arrayDeDivTils.length; i++) {
-                arrayDeDivTils[i].classList.remove("divHover");
-                divsAgenda[i].style.opacity = 0;
-            }
-
-            //adicionar animação para os abrir
+            //abrir os tils que estão fechados
             for(let i=0; i<arraySvg.length; i++){
-                animForm1.innerHTML = `<animateTransform attributeName='transform' href='#esquerdo${i}' ` +
-                    `attributeType='XML' type='translate' to='0 -300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
-                    `<animateTransform href='#direito${i}' attributeName='transform' attributeType='XML' type='translate' ` +
-                    `to='0 300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
-
-                animNum1.innerHTML = `<animateTransform href='#numero${i}' attributeName='transform' ` +
-                    `attributeType='XML' type='translate' to='-150 -275' dur='1.5s' begin='' repeatCount='1' ` +
-                    `fill='freeze' calcMode='spline' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -275; -150 -275'></animateTransform>` +
-                    `<animateTransform href='#mes${i}' attributeName='transform' attributeType='XML' type='translate' to='-150 -160' dur='1.5s' ` +
-                    `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -160; -150 -160'></animateTransform>`;
-
-                window.setTimeout(function () {
-                    divsAgenda[i].style.opacity = 1;
-                }, 750);
-
-                arraySvg[i].setAttribute("viewBox","0 0 515 850");
-                arraySvg[i].style.top = "calc(-100vw / 10 * 125 / 250 - 11.65vw)";
-
-                let text1 = animForm1.childNodes[0];
-                let text2 = animForm1.childNodes[1];
-                let textData1 = animNum1.childNodes[0];
-                let textData2 = animNum1.childNodes[1];
-                arraySvg[i].appendChild(text1);
-                arraySvg[i].appendChild(text2);
-                arraySvg[i].appendChild(textData1);
-                arraySvg[i].appendChild(textData2);
-                text1.beginElement();
-                text2.beginElement();
-                textData1.beginElement();
-                textData2.beginElement();
+                if(fechado[i] === true){
+                    abrirTil(i);
+                }
             }
-
         }
     }
     else {
-        if(telemovel !== dispositivo){
-            dispositivo = telemovel;
+        if(tablet !== dispositivo){
+            //se houve mudança de dispositivo de tablet para desktop
+            dispositivo = tablet;
             for(let i=0; i<arrayDeDivTils.length; i++) {
-                arrayDeDivTils[i].classList.add("divHover");
-                divsAgenda[i].style.opacity = 0;
-                //fechar os tils
-                let child1 = document.querySelectorAll('#edicao2019flex > div:nth-child(1) svg > animateTransform');
-                if (child1.length > 0){
-                    for(let i = 0; i < child1.length; i++){
-                        arraySvg[0].removeChild(child1[i]);
-                    }
-                }
-                let child2 = document.querySelectorAll('#edicao2019flex > div:nth-child(2) svg > animateTransform');
-                if (child2.length > 0){
-                    for(let i = 0; i < child2.length; i++){
-                        arraySvg[1].removeChild(child2[i]);
-                    }
-                }
-                let child3 = document.querySelectorAll('#edicao2019flex > div:nth-child(3) svg > animateTransform');
-                if (child3.length > 0){
-                    for(let i = 0; i < child3.length; i++){
-                        arraySvg[2].removeChild(child3[i]);
-                    }
-                }
-
-                arrayDeDivTils[i].classList.add("divHover");
-                divsAgenda[i].style.opacity = 0;
-                arraySvg[i].setAttribute("viewBox","0 300 515 250");
-                arraySvg[i].style.top = "calc(-100vw / 10 * 125 / 250)";
+                fecharTil(i);
             }
             clickAbrirTils();
         }
@@ -342,7 +240,16 @@ function clickAbrirTils(){
     arrayDeDivTils[2].addEventListener("click", abrirTil2);
 }
 
-function abrirTils(x) {
+function animacaoTils(x) {
+    if (fechado[x]) {
+        abrirTil(x);
+    }
+    else {
+        fecharTil(x);
+    }
+}
+
+function abrirTil(x){
     let x1 = x + 1;
     let child = document.querySelectorAll(`#edicao2019flex > div:nth-child(${x1}) svg > animateTransform`);
 
@@ -351,16 +258,52 @@ function abrirTils(x) {
         `<animateTransform href='#direito${x}' attributeName='transform' attributeType='XML' type='translate' ` +
         `to='0 300' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
 
-    animForm2.innerHTML = `<animateTransform href='#esquerdo${x}' attributeName='transform' ` +
-        `attributeType='XML' type='translate' from='0 -300' to='0 0' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
-        `<animateTransform href='#direito${x}' attributeName='transform' attributeType='XML' type='translate' ` +
-        `from='0 300' to='0 0' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
-
     animNum1.innerHTML = `<animateTransform href='#numero${x}' attributeName='transform' ` +
         `attributeType='XML' type='translate' to='-150 -275' dur='1.5s' begin='' repeatCount='1' ` +
         `fill='freeze' calcMode='spline' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -275; -150 -275'></animateTransform>` +
         `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' to='-150 -160' dur='1.5s' ` +
         `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.66;1' keySplines='.42 0 .58 1; 0 0 0 0' values='0 0; 0 -160; -150 -160'></animateTransform>`;
+
+    fechado[x] = false;
+
+    //tirar hover e mudar opacidade quando a animação estiver quase acabada
+    arrayDeDivTils[x].classList.remove("divHover");
+    window.setTimeout(function () {
+        divsAgenda[x].style.opacity = 1;
+    }, 750);
+
+    //animacao svg
+
+    if(child.length > 0){
+        for(let i=0;i<child.length;i++){
+            arraySvg[x].removeChild(child[i]);
+        }
+    }
+    arraySvg[x].setAttribute("viewBox","0 0 515 850");
+    arraySvg[x].style.top = "calc(-100vw / 48 * 10 * 425 / 515)";
+
+    let text1 = animForm1.childNodes[0];
+    let text2 = animForm1.childNodes[1];
+    let textData1 = animNum1.childNodes[0];
+    let textData2 = animNum1.childNodes[1];
+    arraySvg[x].appendChild(text1);
+    arraySvg[x].appendChild(text2);
+    arraySvg[x].appendChild(textData1);
+    arraySvg[x].appendChild(textData2);
+    text1.beginElement();
+    text2.beginElement();
+    textData1.beginElement();
+    textData2.beginElement();
+}
+
+function fecharTil(x){
+    let x1 = x + 1;
+    let child = document.querySelectorAll(`#edicao2019flex > div:nth-child(${x1}) svg > animateTransform`);
+
+    animForm2.innerHTML = `<animateTransform href='#esquerdo${x}' attributeName='transform' ` +
+        `attributeType='XML' type='translate' from='0 -300' to='0 0' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>` +
+        `<animateTransform href='#direito${x}' attributeName='transform' attributeType='XML' type='translate' ` +
+        `from='0 300' to='0 0' dur='1s' begin='' repeatCount='1' fill='freeze' calcMode='spline' keyTimes='0;1' keySplines='.42 0 .58 1'></animateTransform>`;
 
     animNum2.innerHTML = `<animateTransform href='#numero${x}' attributeName='transform' ` +
         `attributeType='XML' type='translate' from='-150 -275' to='0 0' dur='1.5s' begin='' repeatCount='1' ` +
@@ -368,71 +311,41 @@ function abrirTils(x) {
         `<animateTransform href='#mes${x}' attributeName='transform' attributeType='XML' type='translate' from='-150 -160' to='0 0' dur='1.5s' ` +
         `begin='' repeatCount='1' fill='freeze' keyTimes='0;0.33;1' keySplines='0 0 0 0; .42 0 .58 1' values='-150 -160; 0 -160; 0 0'></animateTransform>`;
 
+    fechado[x] = true;
 
-    if (arrayDeDivTils[x].classList.contains("divHover")) {
+    //retirar opacidade
+    divsAgenda[x].style.opacity = 0;
 
-        arrayDeDivTils[x].classList.toggle("divHover");
-        window.setTimeout(function () {
-            divsAgenda[x].style.opacity = 1;
-            }, 750);
+    //quando acabar a animação, adicionar a classe para o hover e mudar o viewBox do svg e a sua posição
+    window.setTimeout(function () {
+        arrayDeDivTils[x].classList.add("divHover");
+        arraySvg[x].setAttribute("viewBox","0 300 515 250");
+        arraySvg[x].style.top = "calc(-100vw / 48 * 10 * 125 / 515)";
+    }, 1500);
 
-        //animacao svg
+    //animacao svg
 
-        if(child.length > 0){
-            for(let i=0;i<child.length;i++){
-                arraySvg[x].removeChild(child[i]);
-            }
-        }
-        arraySvg[x].setAttribute("viewBox","0 0 515 850");
-        arraySvg[x].style.top = "calc(-100vw / 10 * 125 / 250 - 11.65vw)";
+    let text1 = animForm2.childNodes[0];
+    let text2 = animForm2.childNodes[1];
+    let textData1 = animNum2.childNodes[0];
+    let textData2 = animNum2.childNodes[1];
 
-        let text1 = animForm1.childNodes[0];
-        let text2 = animForm1.childNodes[1];
-        let textData1 = animNum1.childNodes[0];
-        let textData2 = animNum1.childNodes[1];
-        arraySvg[x].appendChild(text1);
-        arraySvg[x].appendChild(text2);
-        arraySvg[x].appendChild(textData1);
-        arraySvg[x].appendChild(textData2);
-        text1.beginElement();
-        text2.beginElement();
-        textData1.beginElement();
-        textData2.beginElement();
-    }
-    else {
-        divsAgenda[x].style.opacity = 0;
-
-        window.setTimeout(function () {
-            arrayDeDivTils[x].classList.toggle("divHover");
-            arraySvg[x].setAttribute("viewBox","0 300 515 250");
-            arraySvg[x].style.top = "calc(-100vw / 10 * 125 / 250)";
-            }, 1500);
-
-        //animacao svg
-
-        let text1 = animForm2.childNodes[0];
-        let text2 = animForm2.childNodes[1];
-        let textData1 = animNum2.childNodes[0];
-        let textData2 = animNum2.childNodes[1];
-
-        window.setTimeout(function(){
-            for(let i=0;i<child.length-2;i++){
-                arraySvg[x].removeChild(child[i]);
-                arraySvg[x].appendChild(text1);
-                arraySvg[x].appendChild(text2);
-                text1.beginElement();
-                text2.beginElement();
-            }
-            },500);
-        for(let i=2;i<child.length;i++){
+    window.setTimeout(function(){
+        for(let i=0;i<child.length-2;i++){
             arraySvg[x].removeChild(child[i]);
+            arraySvg[x].appendChild(text1);
+            arraySvg[x].appendChild(text2);
+            text1.beginElement();
+            text2.beginElement();
         }
-        arraySvg[x].appendChild(textData1);
-        arraySvg[x].appendChild(textData2);
-        textData1.beginElement();
-        textData2.beginElement();
+    },500);
+    for(let i=2;i<child.length;i++){
+        arraySvg[x].removeChild(child[i]);
     }
-
+    arraySvg[x].appendChild(textData1);
+    arraySvg[x].appendChild(textData2);
+    textData1.beginElement();
+    textData2.beginElement();
 }
 
 //texto na classe agenda
@@ -487,7 +400,6 @@ let deiinfo = document.querySelector(".deiInfo");
 let darq = document.querySelector(".darq");
 let darqinfo = document.querySelector(".darqInfo");
 
-
 museu.addEventListener("click", aparecermuseu);
 
 function aparecermuseu() {
@@ -498,7 +410,6 @@ function aparecermuseu() {
     darqinfo.style.display = "none";
     deiinfo.style.display = "none";
 }
-
 
 dei.addEventListener("click", aparecerdei);
 
@@ -511,7 +422,6 @@ function aparecerdei() {
     darqinfo.style.display = "none";
 }
 
-
 darq.addEventListener("click", aparecerdarq);
 
 function aparecerdarq() {
@@ -521,13 +431,9 @@ function aparecerdarq() {
     darqinfo.style.display = "block";
     deiinfo.style.display = "none";
     museuinfo.style.display = "none";
-
 }
 
 let cruz = document.querySelector(".cruz");
-
-cruz.addEventListener("click", sair);
-
 
 function sair() {
     sombra.style.backgroundColor = "";
@@ -537,7 +443,14 @@ function sair() {
     museuinfo.style.display = "none";
 }
 
-/*document.addEventListener("click", function (evt) {
+let telemovel1 = window.matchMedia('(max-width: 768px').matches;
+
+if(!telemovel1){
+    document.addEventListener("click", teste);
+    cruz.addEventListener("click", sair);
+}
+
+function teste(evt) {
     let dentrodarq = darq.contains(evt.target);
     let dentrodei = dei.contains(evt.target);
     let dentromuseu = museu.contains(evt.target);
@@ -546,7 +459,29 @@ function sair() {
     if (!dentrodarq && !dentrodei && !dentromuseu && !dentro2) {
         return sair();
     }
-});*/
+}
+
+window.addEventListener('resize', function () {
+    let telemovel = window.matchMedia('(max-width: 768px').matches;
+    if (!telemovel) {
+
+        museu.addEventListener("click", aparecermuseu);
+        dei.addEventListener("click", aparecerdei);
+        darq.addEventListener("click", aparecerdarq);
+        cruz.addEventListener("click", sair);
+        document.addEventListener("click", teste);
+    } else {
+        sombra.style.backgroundColor = "";
+        fundo.style.display = "";
+        darqinfo.style.display = "";
+        deiinfo.style.display = "";
+        museuinfo.style.display = "";
+        document.removeEventListener("click", sair);
+        document.removeEventListener("click", teste);
+
+    }
+
+});
 
 let localtipo = document.querySelectorAll(".localtipo");
 
@@ -555,8 +490,7 @@ function titulolocal(string, x) {
     for (let i = 0; i < string.length; i++) {
         if (string.charAt(i) === ' ') {
             array += '<span class="circulos"> </span>';
-        }
-        else {
+        } else {
             let r = Math.floor(Math.random() * (3));
             if (r === 1) {
                 array += '<span class="triangulos">' + string.charAt(i) + '</span>';
@@ -569,6 +503,7 @@ function titulolocal(string, x) {
     }
     localtipo[x].insertAdjacentHTML('beforeend', array);
 }
+
 titulolocal('museu da ciência', 0);
 titulolocal('darq', 1);
 titulolocal('dei', 2);

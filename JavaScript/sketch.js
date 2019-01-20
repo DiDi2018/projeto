@@ -37,10 +37,10 @@ function preload() {
 function setup() {
     altura = windowHeight - windowWidth*0.07;
     largura = altura/12*20;
-    marginX = (windowWidth - windowWidth*0.02 - largura)/2;
+    marginX = (windowWidth - windowWidth*0.03 - largura)/2;
     marginY = 0;
     if(largura >= windowWidth){
-        largura = windowWidth-windowWidth*0.02;
+        largura = windowWidth-windowWidth*0.03;
         altura = largura/20*12;
         marginX = 0;
         marginY = (windowHeight - windowWidth*0.07 - altura)/2;
@@ -133,10 +133,10 @@ function draw() {
 function windowResized() {
     altura = windowHeight - windowWidth*0.07;
     largura = altura/12*20;
-    marginX = (windowWidth - windowWidth*0.02 - largura)/2;
+    marginX = (windowWidth - windowWidth*0.03 - largura)/2;
     marginY = 0;
     if(largura >= windowWidth){
-        largura = windowWidth-windowWidth*0.02;
+        largura = windowWidth-windowWidth*0.03;
         altura = largura/20*12;
         marginX = 0;
         marginY = (windowHeight - windowWidth*0.07 - altura)/2;
