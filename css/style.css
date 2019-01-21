@@ -123,6 +123,7 @@ main {
 
 #processingcanvas {
     height: calc(100vh - 7vw);
+    width: 100%;
     scroll-snap-align: start;
 }
 
