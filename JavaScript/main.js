@@ -108,7 +108,7 @@ function menuMobile() {
 imagemMenu.addEventListener("click", menuMobile);
 
 window.addEventListener('resize', function(){
-    if(window.matchMedia('(min-width: 769px').matches){
+    if(window.matchMedia('(min-width: 768px').matches){
         lista.removeAttribute("style");
         lista.classList.remove("show");
     }
@@ -175,7 +175,7 @@ let animNum2 = document.createElementNS("http://www.w3.org/2000/svg","svg");
 
 let fechado = [true, true, true];
 
-let tablet = window.matchMedia('(max-width: 1024px').matches;
+let tablet = window.matchMedia('(max-width: 1023px').matches;
 let dispositivo = tablet;
 
 if(tablet === false){  //se for desktop adiciona o eventlistener
@@ -199,7 +199,7 @@ function abrirTil2(){
 }
 
 window.addEventListener('resize', function(){
-    tablet = window.matchMedia('(max-width: 1024px').matches;
+    tablet = window.matchMedia('(max-width: 1023px').matches;
     if(tablet){
         if(tablet !== dispositivo){
             //se houve mudança de dispositivo de desktop para tablet
@@ -439,7 +439,7 @@ function sair() {
     museuinfo.style.display = "none";
 }
 
-let telemovel1 = window.matchMedia('(max-width: 768px').matches;
+let telemovel1 = window.matchMedia('(max-width: 767px').matches;
 
 if(!telemovel1){
     document.addEventListener("click", fecharfora);
@@ -458,7 +458,7 @@ function fecharfora(evt) {
 }
 
 window.addEventListener('resize', function () {
-    let telemovel = window.matchMedia('(max-width: 768px').matches;
+    let telemovel = window.matchMedia('(max-width: 767px').matches;
     if (!telemovel) {
 
         museu.addEventListener("click", aparecermuseu);

@@ -913,7 +913,7 @@ main {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     #processingcanvas > canvas{
         display: none;
     }
@@ -992,7 +992,7 @@ main {
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
     #processingcanvas, #edicao2019, #intervenientes, #locais, #intervenientes > .pessoa {
         min-height: 100%;
     }
