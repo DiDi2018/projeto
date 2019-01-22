@@ -127,6 +127,12 @@ main {
     scroll-snap-align: start;
 }
 
+
+.animacao {
+    display: none;
+}
+
+
 /*sobre*/
 
 #sobre {
@@ -185,7 +191,7 @@ main {
 }
 
 .divHover:hover {
-    width:calc(100vw / 12 * 3) !important;
+    width: calc(100vw / 12 * 3) !important;
 }
 
 .divHover:hover > svg {
@@ -241,7 +247,7 @@ main {
     height: auto;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
     .pessoaNome > video {
         filter: brightness(99.3%);
     }
@@ -275,7 +281,7 @@ main {
 .pessoaTexto {
     order: 4;
     align-self: flex-start;
-    width: calc(100%/ 24 * 13);
+    width: calc(100% / 24 * 13);
     margin-left: calc(100% / 24);
     line-height: 2.1em;
     font-size: 1.3vw;
@@ -301,15 +307,16 @@ main {
     width: 20vw;
     height: calc(20vw * 2045 / 1235);
 }
-.CantoInferiorDireito{
+
+.CantoInferiorDireito {
     position: absolute;
-    bottom:0;
-    right:0;
+    bottom: 0;
+    right: 0;
     height: auto;
     width: calc(100vw / 24);
 }
 
-.CantoInferiorEsquerdo{
+.CantoInferiorEsquerdo {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -317,7 +324,7 @@ main {
     width: calc(100vw / 24);
 }
 
-.CantoSuperiorEsquerdo{
+.CantoSuperiorEsquerdo {
     position: absolute;
     top: 0;
     left: 0;
@@ -342,10 +349,10 @@ main {
 .fundo2 {
     width: 80vw;
     position: absolute;
-    height:calc(20vw * 2045 / 1235);
+    height: calc(20vw * 2045 / 1235);
     display: none;
     text-align: left;
-    background-color: rgb(250,250,250);
+    background-color: rgb(250, 250, 250);
 }
 
 .cruz {
@@ -450,7 +457,7 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(250,250,250);
+    background-color: rgb(250, 250, 250);
     animation-fill-mode: forwards;
     animation-duration: 3s;
 }
@@ -500,14 +507,6 @@ main {
     100% {
         width: calc(100% - 85%);
     }
-}
-
-.animacao {
-    height: auto;
-    width: 80%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .hiperligacao {
@@ -578,7 +577,6 @@ main {
 @media (max-width: 768px) {
 
     /*header */
-
     header {
         height: 12vw;
     }
@@ -628,7 +626,6 @@ main {
     }
 
     /*seccoes*/
-
     .showSeccao {
         display: block;
         text-align: right;
@@ -643,6 +640,18 @@ main {
         scroll-snap-type: unset;
         height: calc(100vh - 12vw);
     }
+    #processingcanvas>canvas{
+        display: none;
+    }
+
+    .animacao {
+        display:block;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        position: relative;
+        left: 50%;
+    }
 
     #processingcanvas, #sobre, #edicao2019, #intervenientes, #locais, #contactos {
         scroll-snap-align: unset;
@@ -650,19 +659,18 @@ main {
     }
 
     /*sobre*/
-
     #sobre {
         justify-content: unset;
     }
 
-    #sobre > .texto{
+    #sobre > .texto {
         width: unset;
         font-size: 1em;
         line-height: 1.8em;
         margin: 0 5vw calc(100% / 12 * 2.5) 5vw;
     }
 
-    #sobre > .titulos{
+    #sobre > .titulos {
         width: 100%;
         padding: calc(100vw / 24) 0;
         margin-left: 5vw;
@@ -709,7 +717,6 @@ main {
     }
 
     /*intervenientes*/
-
     .pessoa {
         padding-bottom: calc(100% / 12 * 2.5);
     }
@@ -761,9 +768,8 @@ main {
     }
 
     /*LOCAIS*/
-
-    #locais{
-        background-color: rgb(250,250,250);
+    #locais {
+        background-color: rgb(250, 250, 250);
     }
 
     .fundo {
@@ -836,8 +842,8 @@ main {
         line-height: 16vw;
     }
 
-    .icon{
-        height:1em;
+    .icon {
+        height: 1em;
         top: 0.5em;
     }
 
@@ -846,7 +852,6 @@ main {
     }
 
     /*contactos*/
-
     .conteudoContactos {
         min-height: calc(100vh - 24vw);
     }
@@ -886,10 +891,6 @@ main {
         }
     }
 
-    .animacao{
-        width: 100%;
-    }
-
     .hiperligacao {
         height: 10vw;
         width: 50%;
@@ -916,12 +917,17 @@ main {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+    #processingcanvas>canvas{
+        display: none;
+    }
 
-    .animacao{
-        width: 100%;
-        height: auto;
-        left: unset;
-        transform: unset;
+    .animacao {
+        display:block;
+        width:100%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        position: relative;
+        left: 50%;
     }
 
     #sobre {
@@ -981,7 +987,7 @@ main {
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait){
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
     #processingcanvas, #edicao2019, #intervenientes, #locais, #intervenientes > .pessoa {
         min-height: 100%;
     }

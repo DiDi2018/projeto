@@ -81,13 +81,6 @@ function headerScroll(){
         }
     }
 
-    /*animação final*/
-
-    let animacao = document.querySelector(".animacao");
-    let videoPos2 = animacao.getBoundingClientRect();
-    if (videoPos2.top <= window.innerHeight / 4 * 3 && videoPos2.top >= window.innerWidth * 0.06) {
-        animacao.play();
-    }
 
 }
 
