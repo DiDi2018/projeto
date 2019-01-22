@@ -246,12 +246,7 @@ main {
 .pessoaNome > video {
     width: calc(100vw / 24 * 10);
     height: auto;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-    .pessoaNome > video {
-        filter: brightness(99.3%);
-    }
+    filter: brightness(99.3%);
 }
 
 .pessoaImagem {
@@ -916,13 +911,13 @@ main {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    #processingcanvas>canvas{
+    #processingcanvas > canvas{
         display: none;
     }
 
     .animacao {
-        display:block;
-        width:100%;
+        display: block;
+        width: 100%;
         top: 50%;
         transform: translateY(-50%) translateX(-50%);
         position: relative;
