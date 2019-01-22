@@ -121,6 +121,7 @@ sobre.addEventListener('click', function () {
     sobreDiv.scrollIntoView();
     if (lista.classList.contains("show")) {
         lista.classList.remove("show");
+        lista.removeAttribute("style");
     }
 });
 
@@ -129,6 +130,7 @@ edicao.addEventListener('click', function () {
     edicaoDiv.scrollIntoView();
     if (lista.classList.contains("show")) {
         lista.classList.remove("show");
+        lista.removeAttribute("style");
     }
 });
 
@@ -137,6 +139,7 @@ inter.addEventListener('click', function () {
     interDiv.scrollIntoView();
     if (lista.classList.contains("show")) {
         lista.classList.remove("show");
+        lista.removeAttribute("style");
     }
 });
 
@@ -145,6 +148,7 @@ locais.addEventListener('click', function () {
     locaisDiv.scrollIntoView();
     if (lista.classList.contains("show")) {
         lista.classList.remove("show");
+        lista.removeAttribute("style");
     }
 });
 
@@ -153,6 +157,7 @@ contactos.addEventListener('click', function () {
     contactosDiv.scrollIntoView();
     if (lista.classList.contains("show")) {
         lista.classList.remove("show");
+        lista.removeAttribute("style");
     }
 });
 
