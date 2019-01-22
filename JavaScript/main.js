@@ -80,8 +80,6 @@ function headerScroll(){
             contactosAnimacao[i].style.animationName = "animacao";
         }
     }
-
-
 }
 
 headerScroll();
@@ -439,11 +437,11 @@ function sair() {
 let telemovel1 = window.matchMedia('(max-width: 768px').matches;
 
 if(!telemovel1){
-    document.addEventListener("click", teste);
+    document.addEventListener("click", fecharfora);
     cruz.addEventListener("click", sair);
 }
 
-function teste(evt) {
+function fecharfora(evt) {
     let dentrodarq = darq.contains(evt.target);
     let dentrodei = dei.contains(evt.target);
     let dentromuseu = museu.contains(evt.target);
@@ -462,7 +460,7 @@ window.addEventListener('resize', function () {
         dei.addEventListener("click", aparecerdei);
         darq.addEventListener("click", aparecerdarq);
         cruz.addEventListener("click", sair);
-        document.addEventListener("click", teste);
+        document.addEventListener("click", fecharfora);
     } else {
         sombra.style.backgroundColor = "";
         fundo.style.display = "";
@@ -470,7 +468,7 @@ window.addEventListener('resize', function () {
         deiinfo.style.display = "";
         museuinfo.style.display = "";
         document.removeEventListener("click", sair);
-        document.removeEventListener("click", teste);
+        document.removeEventListener("click", fecharfora);
 
     }
 
