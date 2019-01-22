@@ -367,18 +367,18 @@ main {
 .imagemlocal {
     position: absolute;
     top: 50%;
-    transform: translateY(-62%);
-    left: 3vw;
-    height: 25vw;
-    width: auto;
-    margin: 3vw;
+    transform: translateY(-50%);
+    height: auto;
+    width: calc(100vw / 12 * 4);
+    margin-right: calc(100vw / 24);
+    margin-left: calc(100vw / 24 * 1.5);
 }
 
 .museuInfo div, .darqInfo div, .deiInfo div {
-    width: 40%;
+    width: calc(100vw / 12 * 4.5);
     position: absolute;
     top: 40%;
-    right: 4vw;
+    left: calc(100vw / 12 * 5.25);
 }
 
 .museuInfo .icon {
@@ -404,13 +404,11 @@ main {
 }
 
 .localtipo {
-    display: inline-block;
-    width: 35%;
+    width: calc(100vw / 12 * 4.5);
     position: absolute;
     font-size: 4vw;
     top: 5.5vw;
-    left: 50%;
-    margin-left: 3vw;
+    left: calc(100vw / 12 * 5.25);
 }
 
 /*contactos*/
@@ -817,7 +815,7 @@ main {
         width: calc(100% - 10vw);
         position: relative;
         top: 0;
-        right: unset;
+        left: unset;
         margin: 0 5vw calc(100% / 12 * 2.5) 5vw;
     }
 
